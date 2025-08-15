@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - pArriba-m1
+  - pAbajo-m1
+  - pIzquierda-m1
+  - pDerecha-m1
+  - pIzquierda-m2
+  - pArriba-1-m2
+  - pArriba-2-m2
+  - pAbajo-1-m2
+  - pAbajo-2-m2
   layers:
   - Default
   - TransparentFX
