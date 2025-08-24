@@ -17,7 +17,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - enemigo
   - Water
   - UI
   - 
@@ -67,4 +67,7 @@ TagManager:
     locked: 0
   - name: npc
     uniqueID: 2954417147
+    locked: 0
+  - name: enemigo
+    uniqueID: 3913604633
     locked: 0
