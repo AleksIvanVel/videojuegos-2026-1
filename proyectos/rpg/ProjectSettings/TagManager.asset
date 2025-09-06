@@ -59,15 +59,18 @@ TagManager:
   - name: casas
     uniqueID: 1336092405
     locked: 0
-  - name: objetos
-    uniqueID: 78571249
+  - name: npc
+    uniqueID: 2954417147
+    locked: 0
+  - name: base
+    uniqueID: 122237871
     locked: 0
   - name: player
     uniqueID: 556524893
     locked: 0
-  - name: npc
-    uniqueID: 2954417147
-    locked: 0
-  - name: enemigo
+  - name: enemies
     uniqueID: 3913604633
+    locked: 0
+  - name: top
+    uniqueID: 78571249
     locked: 0
