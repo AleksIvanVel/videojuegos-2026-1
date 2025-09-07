@@ -4,15 +4,28 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - pArriba-m1
-  - pAbajo-m1
-  - pIzquierda-m1
-  - pDerecha-m1
-  - pIzquierda-m2
-  - pArriba-1-m2
-  - pArriba-2-m2
-  - pAbajo-1-m2
-  - pAbajo-2-m2
+  - UpM1
+  - AbM1
+  - DrM1
+  - IzM1
+  - UpM2
+  - Up2M2
+  - AbM2
+  - Ab2M2
+  - IzM2
+  - AbM3
+  - DrM3
+  - IzM3
+  - Dr2M3
+  - AbM4
+  - Ab2M4
+  - IzM4
+  - Iz2M4
+  - UpM5
+  - DrM5
+  - UpM6
+  - Up2M6
+  - IzM6
   layers:
   - Default
   - TransparentFX
