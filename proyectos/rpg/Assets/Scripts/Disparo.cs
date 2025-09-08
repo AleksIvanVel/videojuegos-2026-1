@@ -33,7 +33,7 @@ public class Disparo : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && timeNextAtaque <= 0)
         {
             disparando = true;
-            activaCapa("Ataque");
+            activaCapa("Atacar");
             Disparar();
             timeNextAtaque = timeCooldownAtaques;
         }

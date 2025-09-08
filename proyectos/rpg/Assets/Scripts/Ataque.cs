@@ -33,7 +33,7 @@ public class Ataque : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && timeNextAtaque <= 0)
         {
             atacando = true;
-            activaCapa("Ataque");
+            activaCapa("Atacar");
             Golpe();
             timeNextAtaque = timeCooldownAtaques;
         }
