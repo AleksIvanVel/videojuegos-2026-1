@@ -26,6 +26,8 @@ TagManager:
   - UpM6
   - Up2M6
   - IzM6
+  - enemigo
+  - limites
   layers:
   - Default
   - TransparentFX
