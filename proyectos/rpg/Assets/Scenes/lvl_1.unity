@@ -1708,7 +1708,7 @@ GameObject:
   - component: {fileID: 51499329}
   m_Layer: 0
   m_Name: m_derecha_1
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3092,7 +3092,7 @@ GameObject:
   - component: {fileID: 106912544}
   m_Layer: 0
   m_Name: m_izquierda_2
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5050,7 +5050,7 @@ GameObject:
   - component: {fileID: 201293223}
   m_Layer: 0
   m_Name: MapDelimiter_04
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7523,7 +7523,7 @@ GameObject:
   - component: {fileID: 287094724}
   m_Layer: 0
   m_Name: m_arriba_1
-  m_TagString: Untagged
+  m_TagString: enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7703,7 +7703,7 @@ GameObject:
   - component: {fileID: 294290133}
   m_Layer: 0
   m_Name: m_izquierda_1
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12051,7 +12051,7 @@ GameObject:
   - component: {fileID: 474489897}
   m_Layer: 0
   m_Name: MapDelimiter_05
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20110,7 +20110,7 @@ GameObject:
   - component: {fileID: 780190241}
   m_Layer: 0
   m_Name: m_abajo_2
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21844,7 +21844,7 @@ GameObject:
   - component: {fileID: 861984587}
   m_Layer: 0
   m_Name: MapDelimiter_06
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34756,7 +34756,7 @@ GameObject:
   - component: {fileID: 952430372}
   m_Layer: 0
   m_Name: MapDelimiter_07
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35218,7 +35218,7 @@ GameObject:
   - component: {fileID: 967056071}
   m_Layer: 0
   m_Name: m_arriba_2
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39675,7 +39675,7 @@ GameObject:
   - component: {fileID: 1155162897}
   m_Layer: 0
   m_Name: m_derecha_2
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42975,7 +42975,7 @@ GameObject:
   - component: {fileID: 1241753692}
   m_Layer: 0
   m_Name: CasaChica
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45633,7 +45633,7 @@ GameObject:
   - component: {fileID: 1366614145}
   m_Layer: 0
   m_Name: MapDelimiter_01
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45996,9 +45996,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f683c9ea66d05254890ec8899b1d8c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  proyectil: {fileID: 0}
-  timeCooldownAtaques: 1
-  timeNextAtaque: 0
+  proyectil: {fileID: 1150054589165296402, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
+  timeCooldownAtaques: 0
+  timeNextAtaque: 1
   puntoEmision: {fileID: 2141542606}
 --- !u!114 &1384122832
 MonoBehaviour:
@@ -55659,7 +55659,7 @@ GameObject:
   - component: {fileID: 1714397371}
   m_Layer: 0
   m_Name: Colision
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57981,7 +57981,7 @@ GameObject:
   - component: {fileID: 1808210251}
   m_Layer: 0
   m_Name: CasaGrande
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82029,7 +82029,7 @@ GameObject:
   - component: {fileID: 1866611775}
   m_Layer: 0
   m_Name: MapDelimiter_02
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84233,7 +84233,7 @@ GameObject:
   - component: {fileID: 1959814335}
   m_Layer: 0
   m_Name: Arriba
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88058,7 +88058,7 @@ GameObject:
   - component: {fileID: 2139559750}
   m_Layer: 0
   m_Name: m_abajo_1
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88236,7 +88236,7 @@ GameObject:
   - component: {fileID: 2147259826}
   m_Layer: 0
   m_Name: MapDelimiter_03
-  m_TagString: Untagged
+  m_TagString: limites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88369,63 +88369,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2053871533}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &558547614194458114
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1150054589165296402, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_Name
-      value: flecha
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4513980005625096958, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 70749438e7e5cc643adcb0478d4fc424, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -88438,4 +88381,3 @@ SceneRoots:
   - {fileID: 310566730}
   - {fileID: 336160814}
   - {fileID: 1584346728}
-  - {fileID: 558547614194458114}

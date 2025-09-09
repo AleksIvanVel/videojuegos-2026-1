@@ -27,9 +27,9 @@ public class DisparaProyectil : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "limites" || collision.gameObject.tag == "base")
+        if (collision.gameObject.tag == "limites")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         if (collision.gameObject.tag == "enemigo")
         {
