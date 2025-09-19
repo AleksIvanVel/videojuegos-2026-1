@@ -6,7 +6,7 @@ public class NPCs : MonoBehaviour
 {
 
     public GameObject txtDialogo;
-    public static int numVisitas;
+    public  int numVisitas;
 
     public Sprite txt1, txt2;
 

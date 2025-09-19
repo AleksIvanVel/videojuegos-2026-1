@@ -11,3 +11,5 @@ public class DialogoNPCs : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 }
+
+
