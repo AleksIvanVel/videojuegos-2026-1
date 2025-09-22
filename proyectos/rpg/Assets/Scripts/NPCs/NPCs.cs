@@ -18,9 +18,13 @@ public class NPCs : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D obj)
     {
-        txtDialogo.SetActive(true);
-        EscribeDialogo();
-        numVisitas++;
+        if (obj.tag == "Player")
+        {
+            txtDialogo.SetActive(true);
+            EscribeDialogo();
+            numVisitas++;
+        }
+        
     }
 
     private void EscribeDialogo()

@@ -28,6 +28,7 @@ TagManager:
   - IzM6
   - enemigo
   - limites
+  - vida
   layers:
   - Default
   - TransparentFX
@@ -82,6 +83,9 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 556524893
+    locked: 0
+  - name: coleccionables
+    uniqueID: 1927299413
     locked: 0
   - name: enemies
     uniqueID: 3913604633
