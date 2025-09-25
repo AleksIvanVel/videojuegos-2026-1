@@ -9,8 +9,9 @@ public class Inventario : MonoBehaviour
     public GameObject goInventario;
     [SerializeField] private string[] valoresInventario; // "" - sin elemento, string - elemento
     private int numGemasVerdes, numGemasAzules, numGemasRojas, numPocionesVerdes, numPocionesAzules, numPocionesRojas;
-    Button boton; //botones del inventario
-    public Sprite mochila, sobre, mapa, pergamino, libro, herramientas, gemaRoja, gemaVerde, gemaAzul, pocionRoja, pocionVerde, pocionAzul, contenedor;
+    public Image[] espaciosInventario; // Arreglo para los slots
+    public Text[] textoContadores; // Arreglo para los textos de cantidad
+    public Sprite mochila, sobre, mapa, pergamino, libro, herramientas, gemaAzul, gemaRoja, gemaVerde, pocionAzul, pocionRoja, pocionVerde, contenedor;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class Inventario : MonoBehaviour
 
     public void EscribeEnArreglo()
     {
+        Debug.Log("EscribeEnArreglo llamado. Tamaño de valoresInventario: " + valoresInventario.Length);
         if (VerificaEnArreglo() == -1) //No esta en el inventario
         {
             for (int i = 0; i < valoresInventario.Length; i++)
@@ -63,12 +65,15 @@ public class Inventario : MonoBehaviour
 
     private int VerificaEnArreglo()
     {
+        
         int pos = -1;
         for (int i = 0; i < valoresInventario.Length; i++)
         {
+            
             if (valoresInventario[i] == Coleccionables.objColeccionables)
             {
                 pos = i;
+                Debug.Log(pos.ToString());
                 break;
             }
         }
@@ -77,7 +82,7 @@ public class Inventario : MonoBehaviour
 
     public void DibujaElementos(int pos)
     {
-        boton = GameObject.Find("elemento (" + pos + ")").GetComponent<Button>();
+         Debug.Log("Intentando dibujar '" + Coleccionables.objColeccionables + "' en la posición " + pos);
         switch (Coleccionables.objColeccionables)
         {
             case "mochila":
@@ -101,35 +106,45 @@ public class Inventario : MonoBehaviour
             case "gemaRoja":
                 contenedor = gemaRoja;
                 numGemasRojas++;
-                boton.GetComponentInChildren<Text>().text = "x" + numGemasRojas.ToString();
+                textoContadores[pos].text = "x" + numGemasRojas.ToString();
+                textoContadores[pos].enabled = true;
                 break;
             case "gemaAzul":
                 contenedor = gemaAzul;
                 numGemasAzules++;
-                boton.GetComponentInChildren<Text>().text = "x" + numGemasAzules.ToString();
+                textoContadores[pos].text = "x" + numGemasAzules.ToString();
+                textoContadores[pos].enabled = true;
                 break;
             case "gemaVerde":
                 contenedor = gemaVerde;
                 numGemasVerdes++;
-                boton.GetComponentInChildren<Text>().text = "x" + numGemasVerdes.ToString();
-                break;
-            case "pocionAzul":
-                contenedor = pocionAzul;
-                numPocionesAzules++;
-                boton.GetComponentInChildren<Text>().text = "x" + numPocionesAzules.ToString();
+                textoContadores[pos].text = "x" + numGemasVerdes.ToString();
+                textoContadores[pos].enabled = true;
                 break;
             case "pocionRoja":
                 contenedor = pocionRoja;
                 numPocionesRojas++;
-                boton.GetComponentInChildren<Text>().text = "x" + numPocionesRojas.ToString();
+                textoContadores[pos].text = "x" + numPocionesRojas.ToString();
+                textoContadores[pos].enabled = true;
+                break;
+            case "pocionAzul":
+                contenedor = pocionAzul;
+                numPocionesAzules++;
+                textoContadores[pos].text = "x" + numPocionesAzules.ToString();
+                textoContadores[pos].enabled = true;
                 break;
             case "pocionVerde":
                 contenedor = pocionVerde;
                 numPocionesVerdes++;
-                boton.GetComponentInChildren<Text>().text = "x" + numPocionesVerdes.ToString();
+                textoContadores[pos].text = "x" + numPocionesVerdes.ToString();
+                textoContadores[pos].enabled = true;
                 break;
         }
-        boton.GetComponent<Image>().sprite = contenedor;
+        if (contenedor != null)
+        {
+        espaciosInventario[pos].sprite = contenedor;
+        espaciosInventario[pos].enabled = true; // Hacemos visible el sprite
+        }
     }
 
     private void BorrarArreglo()

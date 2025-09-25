@@ -29,6 +29,7 @@ TagManager:
   - enemigo
   - limites
   - vida
+  - coleccionable
   layers:
   - Default
   - TransparentFX

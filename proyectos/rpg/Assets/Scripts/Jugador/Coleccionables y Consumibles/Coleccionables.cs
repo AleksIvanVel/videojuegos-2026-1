@@ -27,19 +27,22 @@ public class Coleccionables : MonoBehaviour
         if (obj.tag == "mana")
         {
             Debug.Log("mana");
-            Destroy(obj.gameObject);
         }
         if (obj.tag == "coleccionable")
         {
-            Debug.Log("coleccionable");
-            Destroy(obj.gameObject);
+            AplicaCambios(obj);
         }
     }
 
     private void AplicaCambios(Collider2D obj)
     {
-        objColeccionables = obj.tag;
-        inventario.EscribeEnArreglo();
-        Destroy(obj.gameObject);
+        ItemsID identificador = obj.GetComponent<ItemsID>();
+        if (identificador != null)
+        {
+            objColeccionables = identificador.idColeccionable;
+            Debug.Log("Recolectado: "+ objColeccionables);
+            inventario.EscribeEnArreglo();
+            Destroy(obj.gameObject);
+        }
     }
 }
