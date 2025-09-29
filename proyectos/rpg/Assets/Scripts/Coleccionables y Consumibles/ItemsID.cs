@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ItemsID : MonoBehaviour
 {
-    public string idColeccionable;
+    public string itemId;
 }

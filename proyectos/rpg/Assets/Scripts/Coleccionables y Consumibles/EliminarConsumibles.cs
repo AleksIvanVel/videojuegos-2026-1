@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EliminarConsumibles : MonoBehaviour
 {
-    public int numCuras;
+    private int numCuras;
+    public int maxCuras;
 
     private GameObject player;
 
@@ -25,7 +26,7 @@ public class EliminarConsumibles : MonoBehaviour
                 numCuras++;
             }
         }
-        if (numCuras == 2) // El objeto te puede curar 2 veces antes de desaparecer
+        if (numCuras == maxCuras) // El objeto te puede curar n veces antes de desaparecer
             {
                 Destroy(consumible);
             }

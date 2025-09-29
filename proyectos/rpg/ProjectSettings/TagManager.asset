@@ -4,32 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - UpM1
-  - AbM1
-  - DrM1
-  - IzM1
-  - UpM2
-  - Up2M2
-  - AbM2
-  - Ab2M2
-  - IzM2
-  - AbM3
-  - DrM3
-  - IzM3
-  - Dr2M3
-  - AbM4
-  - Ab2M4
-  - IzM4
-  - Iz2M4
-  - UpM5
-  - DrM5
-  - UpM6
-  - Up2M6
-  - IzM6
   - enemigo
   - limites
   - vida
   - coleccionable
+  - portales
   layers:
   - Default
   - TransparentFX

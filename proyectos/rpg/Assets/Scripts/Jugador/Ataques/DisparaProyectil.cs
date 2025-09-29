@@ -26,8 +26,9 @@ public class DisparaProyectil : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "limites")
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "limites" || collision.gameObject.tag == "portales")
         {
             Destroy(this.gameObject);
         }
@@ -36,5 +37,6 @@ public class DisparaProyectil : MonoBehaviour
             collision.transform.GetComponent<Enemigo>().TomarDaño(1);
             Destroy(this.gameObject);
         }
+        
     }
 }

@@ -26,7 +26,11 @@ public class Coleccionables : MonoBehaviour
         }
         if (obj.tag == "mana")
         {
-            Debug.Log("mana");
+            if (VidasPlayer.mana < 5)
+            {
+                VidasPlayer.mana++;
+                player.GetComponent<VidasPlayer>().DibujarMana(VidasPlayer.mana);
+            }
         }
         if (obj.tag == "coleccionable")
         {
@@ -39,7 +43,7 @@ public class Coleccionables : MonoBehaviour
         ItemsID identificador = obj.GetComponent<ItemsID>();
         if (identificador != null)
         {
-            objColeccionables = identificador.idColeccionable;
+            objColeccionables = identificador.itemId;
             Debug.Log("Recolectado: "+ objColeccionables);
             inventario.EscribeEnArreglo();
             Destroy(obj.gameObject);
