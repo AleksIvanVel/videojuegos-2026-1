@@ -13,7 +13,7 @@ public class Disparo : MonoBehaviour
     private GameObject player;
 
     public static int dirDisparo = 0;
-    public static bool disparando = false;
+    public static bool disparando; 
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +62,12 @@ public class Disparo : MonoBehaviour
         {
             anim.SetTrigger("DisparaDerecha");
         }
+    }
+
+    public void FinDisparo()
+    {
+        disparando = false;
+        player.GetComponent<MovPlayer>().ForzarIdle();
     }
 
     private void EmiteProyectil()
