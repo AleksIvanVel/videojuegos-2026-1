@@ -10,13 +10,16 @@ public class Disparo : MonoBehaviour
     public Transform puntoEmision;
     private Animator anim;
 
+    private GameObject player;
+
     public static int dirDisparo = 0;
-    public static bool disparando = false;
+    public static bool disparando; 
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -30,11 +33,13 @@ public class Disparo : MonoBehaviour
         {
             timeNextAtaque -= Time.deltaTime;
         }
-        if (Input.GetButtonDown("Fire2") && timeNextAtaque <= 0)
+        if (Input.GetButtonDown("Fire2") && timeNextAtaque <= 0 && VidasPlayer.mana > 0)
         {
             disparando = true;
             activaCapa("Atacar");
             Disparar();
+            VidasPlayer.mana--;
+            player.GetComponent<VidasPlayer>().DibujarMana(VidasPlayer.mana);
             timeNextAtaque = timeCooldownAtaques;
         }
     }
@@ -57,6 +62,12 @@ public class Disparo : MonoBehaviour
         {
             anim.SetTrigger("DisparaDerecha");
         }
+    }
+
+    public void FinDisparo()
+    {
+        disparando = false;
+        player.GetComponent<MovPlayer>().ForzarIdle();
     }
 
     private void EmiteProyectil()

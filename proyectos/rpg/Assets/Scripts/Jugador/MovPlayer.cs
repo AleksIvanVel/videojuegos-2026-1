@@ -13,6 +13,7 @@ public class MovPlayer : MonoBehaviour
     // Varibales para control de animacion entre caminar, atacar e idle
     private string capaIdle = "Idle";
     private string capaCaminar = "Caminar";
+    private string capaAtaque = "Atacar";
     private bool PlayerMoviendose = false;
     private float ultMovx, ultMovy;
 
@@ -37,15 +38,6 @@ public class MovPlayer : MonoBehaviour
         rb.velocity = new Vector2(dirMov.x * velMov, dirMov.y * velMov);
 
         // Ataque
-        if (movY == -1)
-        {
-            dirAtaque = 1;
-        }
-        if (movY == 1)
-        {
-            dirAtaque = 2;
-        }
-
         if (movX == -1)
         {
             dirAtaque = 3;
@@ -53,6 +45,14 @@ public class MovPlayer : MonoBehaviour
         if (movX == 1)
         {
             dirAtaque = 4;
+        }
+        if (movY == -1)
+        {
+            dirAtaque = 1;
+        }
+        if (movY == 1)
+        {
+            dirAtaque = 2;
         }
 
         if (movX == 0 && movY == 0) // Idle
@@ -82,20 +82,23 @@ public class MovPlayer : MonoBehaviour
             if (PlayerMoviendose)
             {
                 activaCapa(capaCaminar);
-                Debug.Log("Capa de caminar activada");
             }
             else
             {
                 activaCapa(capaIdle);
-                Debug.Log("Capa de idle activada");
             }
         }
         else
         {
-            activaCapa("Ataque");
+            activaCapa(capaAtaque);
         }
     }
-        
+
+    public void ForzarIdle()
+    {
+        activaCapa(capaIdle);
+    }
+
 
     private void activaCapa(string capa)
     {
