@@ -26,7 +26,7 @@ public class Coleccionables : MonoBehaviour
         }
         if (obj.tag == "mana")
         {
-            if (VidasPlayer.mana < 5)
+            if (VidasPlayer.mana < 10)
             {
                 VidasPlayer.mana++;
                 player.GetComponent<VidasPlayer>().DibujarMana(VidasPlayer.mana);

@@ -71,7 +71,7 @@ public class MovCamara : MonoBehaviour
             Vector3 posicionPlayer = new Vector3(21.5f, -13.35f, 0);
             this.transform.position = posicionPlayer;
         }
-        
+
         if (collision.gameObject && identificador.itemId == "Ab2M2") // Ir a Mundo 6
         {
             Vector3 posicionCamara = new Vector3(29, -17, -10);
@@ -149,7 +149,7 @@ public class MovCamara : MonoBehaviour
         if (collision.gameObject && identificador.itemId == "IzM4") //Ir a Mundo 3
         {
             Vector3 posicionCamara = new Vector3(0, 17, -10);
-           camara.transform.position = posicionCamara;
+            camara.transform.position = posicionCamara;
 
             Vector3 posicionPlayer = new Vector3(7.5f, 21.6f, 0);
             this.transform.position = posicionPlayer;
@@ -158,7 +158,7 @@ public class MovCamara : MonoBehaviour
         if (collision.gameObject && identificador.itemId == "Iz2M4") //Ir a Mundo 3
         {
             Vector3 posicionCamara = new Vector3(0, 17, -10);
-           camara.transform.position = posicionCamara;
+            camara.transform.position = posicionCamara;
 
             Vector3 posicionPlayer = new Vector3(7.5f, 13.6f, 0);
             this.transform.position = posicionPlayer;
@@ -209,6 +209,10 @@ public class MovCamara : MonoBehaviour
 
             Vector3 posicionPlayer = new Vector3(7f, -17.4f, 0);
             this.transform.position = posicionPlayer;
+        }
+        else
+        {
+            
         }
     }
 }
