@@ -53,7 +53,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    private float AsignaPosXCamara()
+    private void AsignaPosXCamara()
+    {
+        CamaraScript.offsetX = Camera.main.transform.position.x - transform.position.x - valorOffset;
+    }
+
+    public float ObtenerPosX()
     {
         return transform.position.x;
     }
