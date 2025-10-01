@@ -14,8 +14,14 @@ public class Player : MonoBehaviour
     private float velocidad = 3.0f, fuerzarebote = 4.0f;
     private Button btnvolar;
 
+    private int score;
+    public AudioSource reproductor;
+    public AudioClip sonidoPunto, sonidoMorir, sonidoVuelo;
+    public Text txtScore;
+
     void Awake()
     {
+        score = 0;
         if (instancia == null)
         {
             instancia = this;
@@ -39,6 +45,8 @@ public class Player : MonoBehaviour
                 yaVolo = false;
                 rb2d.velocity = new Vector2(0, fuerzarebote);
                 anim.SetTrigger("volando");
+                reproductor.clip = sonidoVuelo;
+                reproductor.Play();
             }
 
             if (rb2d.velocity.y >= 0)
@@ -66,5 +74,30 @@ public class Player : MonoBehaviour
     private void VuelaSteve()
     {
         yaVolo = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D objColisionado)
+    {
+        if (objColisionado.tag == "grupoEstalactitas")
+        {
+            score++;
+            txtScore.text = score.ToString();
+            reproductor.clip = sonidoPunto;
+            reproductor.Play();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D objColisionado)
+    {
+        if (objColisionado.gameObject.tag == "piso" || objColisionado.gameObject.tag == "estalactita")
+        {
+            if (estaVivo)
+            {
+                estaVivo = false;
+                anim.SetTrigger("muere");
+                reproductor.clip = sonidoMorir;
+                reproductor.Play();
+            }
+        }
     }
 }
