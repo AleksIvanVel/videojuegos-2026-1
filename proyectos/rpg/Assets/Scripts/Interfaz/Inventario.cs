@@ -8,10 +8,11 @@ public class Inventario : MonoBehaviour
     private bool muestraInventario;
     public GameObject goInventario;
     [SerializeField] private string[] valoresInventario; // "" - sin elemento, string - elemento
-    private int numGemasAzules, numGemasRojas, numGemasVerdes, numMonedas;
+    private int numGemasAzules, numGemasRojas, numGemasVerdes, numHierbas, numLlaves, numMonedas, numPan;
     public Image[] espaciosInventario; // Arreglo para los slots
     public Text[] textoContadores; // Arreglo para los textos de cantidad
-    public Sprite gemaAzul, gemaRoja, gemaVerde, moneda, contenedor;
+    public Sprite amuleto, amuletoPlata, anillo, armadura1, armadura2, armadura3, armadura4,
+    escudo, gemaAzul, gemaRoja, gemaVerde, hierbas, hacha, llave, moneda, pan, contenedor;
 
     void Start()
     {
@@ -91,28 +92,105 @@ public class Inventario : MonoBehaviour
          Debug.Log("Intentando dibujar '" + Coleccionables.objColeccionables + "' en la posición " + pos);
         switch (Coleccionables.objColeccionables)
         {
+            case "amuleto":
+                contenedor = amuleto;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+            case "amuletoPlata":
+                contenedor = amuletoPlata;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "anillo":
+                contenedor = anillo;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "armadura1":
+                contenedor = armadura1;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "armadura2":
+                contenedor = armadura2;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "armadura3":
+                contenedor = armadura3;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "armadura4":
+                contenedor = armadura4;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "escudo":
+                contenedor = escudo;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "hacha":
+                contenedor = hacha;
+                textoContadores[pos].text = "Max";
+                textoContadores[pos].enabled = true;
+                break;
+
+            case "hierbas":
+                contenedor = hierbas;
+                numHierbas++;
+                textoContadores[pos].text = "x" + numHierbas.ToString();
+                textoContadores[pos].enabled = true;
+                break;
+
             case "gemaRoja":
                 contenedor = gemaRoja;
                 numGemasRojas++;
                 textoContadores[pos].text = "x" + numGemasRojas.ToString();
                 textoContadores[pos].enabled = true;
                 break;
+
             case "gemaAzul":
                 contenedor = gemaAzul;
                 numGemasAzules++;
                 textoContadores[pos].text = "x" + numGemasAzules.ToString();
                 textoContadores[pos].enabled = true;
                 break;
+
             case "gemaVerde":
                 contenedor = gemaVerde;
                 numGemasVerdes++;
                 textoContadores[pos].text = "x" + numGemasVerdes.ToString();
                 textoContadores[pos].enabled = true;
                 break;
+
+            case "llave":
+                contenedor = llave;
+                numLlaves++;
+                textoContadores[pos].text = "x" + numLlaves.ToString();
+                textoContadores[pos].enabled = true;
+                break;
+
             case "moneda":
                 contenedor = moneda;
                 numMonedas++;
                 textoContadores[pos].text = "x" + numMonedas.ToString();
+                textoContadores[pos].enabled = true;
+                break;
+            
+            case "pan":
+                contenedor = pan;
+                numPan++;
+                textoContadores[pos].text = "x" + numPan.ToString();
                 textoContadores[pos].enabled = true;
                 break;
         }
