@@ -50,8 +50,9 @@ public class ColisionadorFondo : MonoBehaviour
         if (objColisionado.tag == "piso")
         {
             Vector3 temp = objColisionado.transform.position;
-            float ancho = ((BoxCollider2D)objColisionado).size.x;
+            float ancho = objColisionado.GetComponent<SpriteRenderer>().bounds.size.x;
             temp.x = ultimaXPiso + ancho;
+
             objColisionado.transform.position = temp;
             ultimaXPiso = temp.x;
         }
