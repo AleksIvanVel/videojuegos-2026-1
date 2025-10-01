@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - btnVolar
+  - fondo
+  - piso
+  - estalactita
+  - grupoEstalactitas
   layers:
   - Default
   - TransparentFX
@@ -12,13 +16,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - fondoColector
+  - fondo
+  - piso
+  - player
+  - estalactita
+  - estalactitaColector
+  - grupoEstalactitas
   - 
   - 
   - 
@@ -41,4 +45,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: fondo
+    uniqueID: 1181441675
+    locked: 0
+  - name: piso
+    uniqueID: 443332217
+    locked: 0
+  - name: estalactitas
+    uniqueID: 595915083
+    locked: 0
+  - name: player
+    uniqueID: 1804161857
+    locked: 0
+  - name: canvas
+    uniqueID: 201530127
     locked: 0
