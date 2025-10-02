@@ -17,6 +17,10 @@ public class NPCs : MonoBehaviour
     private bool jugadorCerca = false;
     private bool dialogoActivo = false;
 
+    [Header("Sonidos")]
+    public AudioClip InicioDialogo;
+    public AudioClip SigDialogo;
+
     void Start()
     {
         panelDialogo.SetActive(false);
@@ -32,11 +36,13 @@ public class NPCs : MonoBehaviour
             if (!dialogoActivo)
             {
                 IniciarDialogo();
+                AudioManager.instance.PlaySFX(InicioDialogo);
             }
             // Si ya estaba activo, pasamos a la siguiente línea o lo cerramos.
             else
             {
                 SiguienteDialogo();
+                AudioManager.instance.PlaySFX(SigDialogo);
             }
         }
     }
