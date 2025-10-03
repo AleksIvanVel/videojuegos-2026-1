@@ -10,10 +10,15 @@ public class Disparo : MonoBehaviour
     public Transform puntoEmision;
     private Animator anim;
 
+    [Header("Sonidos")]
+    public AudioClip SonidoDisparo;
+
     private GameObject player;
 
     public static int dirDisparo = 0;
-    public static bool disparando; 
+    public static bool disparando;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +42,7 @@ public class Disparo : MonoBehaviour
         {
             disparando = true;
             activaCapa("Atacar");
+            AudioManager.instance.PlaySFX(SonidoDisparo);
             Disparar();
             VidasPlayer.mana--;
             player.GetComponent<VidasPlayer>().DibujarMana(VidasPlayer.mana);

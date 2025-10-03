@@ -19,6 +19,13 @@ public class VidasPlayer : MonoBehaviour
     private const int manaINI = 10;
     public static int puedePerderVida = 1;
 
+    [Header("Sonidos")]
+
+    public AudioClip GameOver;
+    public AudioClip Daño;
+    public AudioClip Cura;
+    public AudioClip Mana;
+
     void Start()
     {
         anchoVidasPlayer = vidaPlayer.GetComponent<RectTransform>().sizeDelta.x;
@@ -49,16 +56,19 @@ public class VidasPlayer : MonoBehaviour
     {
         RectTransform transformaImagen = vidaPlayer.GetComponent<RectTransform>();
         transformaImagen.sizeDelta = new Vector2(anchoVidasPlayer * (float)vida / (float)vidasINI, transformaImagen.sizeDelta.y);
+        AudioManager.instance.PlaySFX(Cura);
     }
 
     public void DibujarMana(int mana)
     {
         RectTransform transformaImagen = manaPlayer.GetComponent<RectTransform>();
         transformaImagen.sizeDelta = new Vector2(anchoManaPlayer * (float)mana / (float)manaINI, transformaImagen.sizeDelta.y);
+        AudioManager.instance.PlaySFX(Mana);
     }
 
     IEnumerator EjecutaMuerte()
     {
+        AudioManager.instance.PlaySFX(GameOver);
         yield return new WaitForSeconds(0.3f);
         gameOver.SetActive(true);
         Time.timeScale = 0;

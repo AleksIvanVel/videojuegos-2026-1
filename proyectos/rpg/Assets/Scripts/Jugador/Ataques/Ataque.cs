@@ -13,6 +13,9 @@ public class Ataque : MonoBehaviour
 
     public static bool atacando;
 
+    [Header("Sonidos")]
+    public AudioClip SonidoAtaque;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,7 @@ public class Ataque : MonoBehaviour
             atacando = true;
             activaCapa("Atacar");
             Golpe();
+            AudioManager.instance.PlaySFX(SonidoAtaque);
             timeNextAtaque = timeCooldownAtaques;
         }
     }

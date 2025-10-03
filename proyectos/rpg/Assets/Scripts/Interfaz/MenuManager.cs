@@ -27,6 +27,10 @@ public class MenuManager : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    [Header("Sonidos")]
+    public AudioClip EntraPausa;
+    public AudioClip SalePausa;
+
     void Start()
     {
         MostrarMenuInicial();
@@ -115,12 +119,15 @@ public class MenuManager : MonoBehaviour
             MostrarPausa(false);
             Time.timeScale = 1;
             PausaActive = false;
+            AudioManager.instance.PlaySFX(SalePausa);
+
         }
         else
         {
             MostrarPausa(true);
             Time.timeScale = 0;
             PausaActive = true;
+            AudioManager.instance.PlaySFX(EntraPausa);
         }
     }
 
@@ -132,7 +139,6 @@ public class MenuManager : MonoBehaviour
             if (PausaActive == true) //Se accedio a Ajustes por el Menu de Pausa
             {
                 MostrarPausa(true);
-                MenuInicial.SetActive(false);
             }
             else if (MenuInicialActive == true) //Se accedio a Ajustes desde el Menu Principal
             {
