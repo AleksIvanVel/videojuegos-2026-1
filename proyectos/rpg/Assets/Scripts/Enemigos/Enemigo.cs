@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Enemigo : MonoBehaviour
 {
     public int vidaEnemigo = 1;
+    public int numEnemigosEliminados = 0;
     private float frecAtaque = 0.5f, tiempoSigAtaque = 0, iniciaConteo;
 
     public Transform personaje;
@@ -121,16 +122,8 @@ public class Enemigo : MonoBehaviour
         vidaEnemigo -= daño;
         if (vidaEnemigo <= 0)
         {
-
-            // Actualizar misiones de eliminación
-            foreach (var m in MisionManager.instance.misiones)
-            {
-                if (m.EstaActiva && m.tipoMision == TipoMision.Eliminacion && m.objetivo == "enemigo")
-                {
-                    m.cantidadActual++;
-                    Debug.Log($"Enemigos eliminados: {m.cantidadActual}/{m.cantidadRequerida} para la misión {m.misionNombre}");
-                }
-            }
+            numEnemigosEliminados++;
+            MisionManager.instance.ActualizarProgresoMision("enemigo", numEnemigosEliminados);
 
             Destroy(gameObject);
             AudioManager.instance.PlaySFX(EliminarEnemigo);

@@ -126,7 +126,39 @@ public class Inventario : MonoBehaviour
         }
     }
 
-    // Funciones genéricas para misiones
+    public void AgregarItem(string idItem, int cantidad)
+    {
+        for (int i = 0; i < cantidad; i++)
+        {
+            Coleccionables.objColeccionables = idItem;
+            EscribeEnArreglo();
+        }
+
+        Debug.Log($"Agregado al inventario: {idItem} x{cantidad}");
+    }
+
+    public void RedibujarInventario()
+    {
+        // Limpia todos los espacios antes de redibujar
+        for (int i = 0; i < espaciosInventario.Length; i++)
+        {
+            espaciosInventario[i].enabled = false;
+            textoContadores[i].enabled = false;
+            valoresInventario[i] = "";
+        }
+
+        int index = 0;
+        foreach (var kvp in cantidadItems)
+        {
+            if (kvp.Value > 0 && index < valoresInventario.Length)
+            {
+                valoresInventario[index] = kvp.Key;
+                DibujaElementos(index, kvp.Key);
+                index++;
+            }
+        }
+    }
+
     public int GetCantidadItem(string item)
     {
         if (cantidadItems.ContainsKey(item))

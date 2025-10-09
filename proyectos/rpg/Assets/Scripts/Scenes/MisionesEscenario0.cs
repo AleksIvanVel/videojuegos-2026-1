@@ -8,14 +8,18 @@ public class MisionesEscenario0 : MonoBehaviour
     {
         Mision misionHierbas = new Mision
         {
-            misionId = "nivel0_hierbas",
+            idMision = "nivel0_hierbas",
             misionNombre = "Recolectar hierbas finas",
             descripcion = "Héctor necesita 3 hierbas finas del bosque cercano. Entrégaselas para recibir una moneda.",
             tipoMision = TipoMision.Recoleccion,
-            objetivo = "hierbas",
-            cantidadRequerida = 3,
-            recompenza = "moneda",
-            cantidadRecompenza = 1,
+            objetivos = new List<ObjetivoMision>
+            {
+                new ObjetivoMision { itemRequerido = "hierbas", cantidadRequerida = 3 }
+            },
+            recompensas = new List<RecompensaMision>
+            {
+                new RecompensaMision { itemRecompensa = "moneda", cantidadRecompensa = 3 }
+            },
             EstaActiva = false,
             EstaCompletada = false
         };

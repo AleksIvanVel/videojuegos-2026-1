@@ -11,7 +11,7 @@ public enum TipoMision
 }
 public class Mision
 {
-    public string misionId;
+    public string idMision;
     public string misionNombre;
     public string descripcion;
 
@@ -19,10 +19,20 @@ public class Mision
     public bool EstaCompletada;
 
     public TipoMision tipoMision;
-    public string objetivo;
+
+    public List<ObjetivoMision> objetivos;
+    public List<RecompensaMision> recompensas;
+}
+
+public class ObjetivoMision
+{
+    public string itemRequerido;
     public int cantidadRequerida;
     public int cantidadActual;
+}
 
-    public string recompenza;
-    public int cantidadRecompenza;
+public class RecompensaMision
+{
+    public string itemRecompensa;
+    public int cantidadRecompensa;
 }

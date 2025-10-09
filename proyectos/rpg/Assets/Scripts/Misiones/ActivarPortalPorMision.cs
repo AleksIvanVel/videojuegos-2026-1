@@ -41,9 +41,6 @@ public class ActivarPortalPorMision : MonoBehaviour
 
         if (bloqueoPortal != null)
             bloqueoPortal.SetActive(false);
-
-        Debug.Log($"Portal {itemId} activado (misión {misionIdRequerida})");
-
     }
 
     private void DesactivarPortal()
@@ -53,7 +50,5 @@ public class ActivarPortalPorMision : MonoBehaviour
 
         if (bloqueoPortal != null)
             bloqueoPortal.SetActive(true);
-
-        Debug.Log($"Portal {itemId} desactivado (misión {misionIdRequerida} no activa)");
     }
 }

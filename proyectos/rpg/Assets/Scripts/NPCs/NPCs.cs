@@ -21,7 +21,6 @@ public class NPCs : MonoBehaviour
 
     [Header("Misiones")]
     public bool tieneMision = false;        // Si este NPC entrega misión
-    private bool debeActivarMision = false; // Bandera para activar misión en próximo diálogo
     public string misionId;                 // ID de la misión
     private Mision mision;
 
@@ -93,30 +92,31 @@ public class NPCs : MonoBehaviour
         panelDialogo.SetActive(true);
         indicadorInteraccion.SetActive(false);
 
-        if (debeActivarMision)
-        {
-            ActivarMision();
-            indiceDialogo = 0;
-            debeActivarMision = false;
-        }
-
         string[] dialogosAMostrar = dialogosSinMision;
 
         if (tieneMision && mision != null)
         {
+            // Misión no activa ni completada 
             if (!mision.EstaActiva && !mision.EstaCompletada)
             {
                 dialogosAMostrar = dialogosIniciales;
 
+                // Activar misión solo cuando se terminen todos los diálogos iniciales
                 if (indiceDialogo >= dialogosIniciales.Length)
                 {
-                    // No activamos de inmediato, esperamos próximo input
-                    debeActivarMision = true;
+                    ActivarMision();
+                    indiceDialogo = 0;
+
+                    // Cambiar a los diálogos de misión activa inmediatamente
+                    dialogosAMostrar = dialogosMisionActiva;
                 }
             }
+            // Misión activa y no completada
             else if (mision.EstaActiva && !mision.EstaCompletada)
             {
                 dialogosAMostrar = dialogosMisionActiva;
+
+                // Si se cumplen los objetivos, completar misión
                 if (TieneObjetosRequeridos())
                 {
                     CompletarMision();
@@ -127,6 +127,14 @@ public class NPCs : MonoBehaviour
             else if (mision.EstaCompletada)
             {
                 dialogosAMostrar = dialogosMisionCompletada;
+
+                // Reiniciar misión
+                //if (indiceDialogo >= dialogosMisionCompletada.Length)
+                //{
+                //    ReiniciarMision();
+                //    dialogosAMostrar = dialogosIniciales;
+                //    indiceDialogo = 0;
+                //}
             }
         }
 
@@ -153,51 +161,48 @@ public class NPCs : MonoBehaviour
     {
         if (mision != null)
         {
-            mision.EstaActiva = true;
-            Debug.Log("Misión activada: " + mision.misionNombre);
+            MisionManager.instance.ActivarMision(mision.idMision);
         }
     }
 
     private bool TieneObjetosRequeridos()
     {
         if (mision == null || inventario == null) return false;
+        if (mision.tipoMision != TipoMision.Recoleccion) return false;
 
-        switch (mision.tipoMision)
+        foreach (var obj in mision.objetivos)
         {
-            case TipoMision.Recoleccion:
-                return inventario.GetCantidadItem(mision.objetivo) >= mision.cantidadRequerida;
-
-            case TipoMision.Eliminacion:
-                return mision.cantidadActual >= mision.cantidadRequerida;
-
-            default:
-                return false;
+            int cantidad = inventario.GetCantidadItem(obj.itemRequerido);
+            if (cantidad < obj.cantidadRequerida)
+                return false; // Falta algún objeto
         }
+
+        return true;
     }
 
 
     private void CompletarMision()
     {
-
         if (mision == null) return;
 
-        // Si es de recolección, restar ítems
+        // Si es recolección, restar los ítems requeridos
         if (mision.tipoMision == TipoMision.Recoleccion)
         {
-            inventario.RestarItem(mision.objetivo, mision.cantidadRequerida);
+            foreach (var obj in mision.objetivos)
+            {
+                inventario.RestarItem(obj.itemRequerido, obj.cantidadRequerida);
+            }
         }
 
-        // Dar la recompensa
-        for (int i = 0; i < mision.cantidadRecompenza; i++)
+        MisionManager.instance.CompletarMision(mision.idMision);
+    }
+
+    private void ReiniciarMision()
+    {
+        if (mision != null)
         {
-            Coleccionables.objColeccionables = mision.recompenza;
-            inventario.EscribeEnArreglo();
+            MisionManager.instance.ReiniciarMision(mision.idMision);
         }
-
-        mision.EstaActiva = false;
-        mision.EstaCompletada = true;
-        MisionManager.instance.CompletarMision(mision.misionId);
-        Debug.Log("Misión completada: " + mision.misionNombre);
     }
 
     private void CerrarDialogo()
