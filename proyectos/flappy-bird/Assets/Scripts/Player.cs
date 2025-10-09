@@ -15,9 +15,14 @@ public class Player : MonoBehaviour
     private Button btnvolar;
 
     private int score;
-    public AudioSource reproductor;
+
     public AudioClip sonidoPunto, sonidoMorir, sonidoVuelo;
+    private AudioSource audioVuelo;
+    private AudioSource audioPunto;
+    private AudioSource audioMorir;
+
     public Text txtScore;
+    public FinJuego finJuegoManager;
 
     void Awake()
     {
@@ -30,6 +35,25 @@ public class Player : MonoBehaviour
         btnvolar = GameObject.FindGameObjectWithTag("btnVolar").GetComponent<Button>();
         btnvolar.onClick.AddListener( () => VuelaSteve() );
         AsignaPosXCamara();
+
+        ConfigurarAudioSources();
+    }
+
+    private void ConfigurarAudioSources()
+    {
+        audioVuelo = gameObject.AddComponent<AudioSource>();
+        audioVuelo.clip = sonidoVuelo;
+        audioVuelo.playOnAwake = false;
+
+        audioPunto = gameObject.AddComponent<AudioSource>();
+        audioPunto.clip = sonidoPunto;
+        audioPunto.playOnAwake = false;
+
+        audioMorir = gameObject.AddComponent<AudioSource>();
+        audioMorir.clip = sonidoMorir;
+        audioMorir.playOnAwake = false;
+
+        ActualizarVolumenEfectos();
     }
 
     void FixedUpdate()
@@ -45,8 +69,9 @@ public class Player : MonoBehaviour
                 yaVolo = false;
                 rb2d.velocity = new Vector2(0, fuerzarebote);
                 anim.SetTrigger("volando");
-                reproductor.clip = sonidoVuelo;
-                reproductor.Play();
+
+                ActualizarVolumenEfectos();
+                audioVuelo.Play();
             }
 
             if (rb2d.velocity.y >= 0)
@@ -76,14 +101,29 @@ public class Player : MonoBehaviour
         yaVolo = true;
     }
 
+    private void ActualizarVolumenEfectos()
+    {
+        if (Musica.instancia != null)
+        {
+            float volumen = Musica.instancia.ObtenerVolumenEfectos();
+            if (audioVuelo != null)
+                audioVuelo.volume = volumen;
+            if (audioPunto != null)
+                audioPunto.volume = volumen;
+            if (audioMorir != null)
+                audioMorir.volume = volumen;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D objColisionado)
     {
         if (objColisionado.tag == "grupoEstalactitas")
         {
             score++;
             txtScore.text = score.ToString();
-            reproductor.clip = sonidoPunto;
-            reproductor.Play();
+            
+            ActualizarVolumenEfectos();
+            audioPunto.Play();
         }
     }
 
@@ -95,8 +135,16 @@ public class Player : MonoBehaviour
             {
                 estaVivo = false;
                 anim.SetTrigger("muere");
-                reproductor.clip = sonidoMorir;
-                reproductor.Play();
+                
+                ActualizarVolumenEfectos();
+                audioMorir.Play();
+
+                MenuPrincipal.ActualizarRecord(score);
+
+                if (finJuegoManager != null)
+                {
+                    finJuegoManager.MostrarFinJuego(score);
+                }
             }
         }
     }
