@@ -28,9 +28,12 @@ public class ActivarPortalPorMision : MonoBehaviour
     void Update()
     {
         Mision mision = MisionManager.instance.ObtenerMisionPorId(misionIdRequerida);
-        if (mision != null && mision.EstaActiva)
+        //Si la mision esta  o ya se ha completado
+        if ((mision != null && mision.EstaActiva) || mision.EstaCompletada)
+            //Mantiene activo el portal quitando el bloqueo
             ActivarPortal();
         else
+            //Mantiene bloqueado el portal 
             DesactivarPortal();
     }
 

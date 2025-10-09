@@ -16,7 +16,7 @@ public class Inventario : MonoBehaviour
     
     // Sprites de items
     public Sprite amuleto, amuletoPlata, anillo, armadura1, armadura2, armadura3, armadura4,
-    escudo, gemaAzul, gemaRoja, gemaVerde, hierbas, hacha, llave, moneda, pan, contenedor;
+    escudo, gemaAzul, gemaRoja, gemaVerde, hierbas, hacha, llaveDorada, llaveAzul, llaveVerde, llavePlateada, moneda, pan, contenedor;
 
     [Header("Sonidos")]
     public AudioClip AbrirInventario;
@@ -112,7 +112,10 @@ public class Inventario : MonoBehaviour
             case "gemaRoja": contenedor = gemaRoja; break;
             case "gemaAzul": contenedor = gemaAzul; break;
             case "gemaVerde": contenedor = gemaVerde; break;
-            case "llave": contenedor = llave; break;
+            case "llaveDorada": contenedor = llaveDorada; break;
+            case "llaveAzul": contenedor = llaveAzul; break;
+            case "llaveVerde": contenedor = llaveVerde; break;
+            case "llavePlateada": contenedor = llavePlateada; break;
             case "moneda": contenedor = moneda; break;
             case "pan": contenedor = pan; break;
         }

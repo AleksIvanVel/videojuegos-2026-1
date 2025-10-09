@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MisionesEscenario1 : MonoBehaviour
+public class MisionesChozaRio : MonoBehaviour
 {
     void Start()
     {
@@ -59,7 +59,7 @@ public class MisionesEscenario1 : MonoBehaviour
             },
             recompensas = new List<RecompensaMision>
             {
-                new RecompensaMision { itemRecompensa = "llave", cantidadRecompensa = 1 }
+                new RecompensaMision { itemRecompensa = "llaveAzul", cantidadRecompensa = 1 }
             },
             EstaActiva = false,
             EstaCompletada = false

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MisionesEscenario0 : MonoBehaviour
+public class MisionesPueblo: MonoBehaviour
 {
     void Start()
     {
