@@ -18,6 +18,9 @@ public class Enemigo : MonoBehaviour
     private Transform mirarHacia;
     [SerializeField] private float umbralLlegada = 0.2f; // Distancia para considerar que llegó al punto de ruta
 
+    [Header("Sonidos")]
+    public AudioClip EliminarEnemigo;
+
     private void Awake()
     {
         agente = GetComponent<NavMeshAgent>();
@@ -115,6 +118,7 @@ public class Enemigo : MonoBehaviour
         if (vidaEnemigo <= 0)
         {
             Destroy(gameObject);
+            AudioManager.instance.PlaySFX(EliminarEnemigo);
         }
     }
 }

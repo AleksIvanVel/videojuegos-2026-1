@@ -14,6 +14,10 @@ public class Inventario : MonoBehaviour
     public Sprite amuleto, amuletoPlata, anillo, armadura1, armadura2, armadura3, armadura4,
     escudo, gemaAzul, gemaRoja, gemaVerde, hierbas, hacha, llave, moneda, pan, contenedor;
 
+    [Header("Sonidos")]
+    public AudioClip AbrirInventario;
+    public AudioClip CerrarInventario;
+
     void Start()
     {
         muestraInventario = false;
@@ -40,12 +44,14 @@ public class Inventario : MonoBehaviour
             muestraInventario = false;
             goInventario.SetActive(false);
             Time.timeScale = 1;
+            AudioManager.instance.PlaySFX(CerrarInventario);
         }
         else
         {
             muestraInventario = true;
             goInventario.SetActive(true);
             Time.timeScale = 0;
+            AudioManager.instance.PlaySFX(AbrirInventario);
         }
     }
 

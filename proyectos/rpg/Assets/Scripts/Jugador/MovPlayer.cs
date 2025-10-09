@@ -19,6 +19,12 @@ public class MovPlayer : MonoBehaviour
 
     public static int dirAtaque = 0; // 1 ~ Front, 2 ~ Back, 3 ~ Left, 4 ~ Right
 
+    [Header("Sonidos")]
+
+    public AudioClip Caminar;
+
+    
+
     void FixedUpdate()
     {
         if (Ataque.atacando == false && Disparo.disparando == false)
@@ -62,6 +68,7 @@ public class MovPlayer : MonoBehaviour
         else // Caminar
         {
             PlayerMoviendose = true;
+            AudioManager.instance.PlaySFX(Caminar);
             ultMovx = movX;
             ultMovy = movY;
         }
