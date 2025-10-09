@@ -10,7 +10,7 @@ public class MisionesEscenario1 : MonoBehaviour
         {
             misionId = "nivel1_eliminatopos",
             misionNombre = "Eliminar a los Topos",
-            descripcion = "Demasiados Topos están destruyendo la choza del río. Deshazte de ellos.",
+            descripcion = "Demasiados Topos estan destruyendo la choza del rio. Deshazte de ellos.",
             tipoMision = TipoMision.Eliminacion,
             objetivo = "enemigo",
             cantidadRequerida = 5,
@@ -25,7 +25,7 @@ public class MisionesEscenario1 : MonoBehaviour
         {
             misionId = "nivel1_buscarhacha",
             misionNombre = "Buscar el hacha de Alex",
-            descripcion = "Alex fue a talar al bosque pero algo lo asusto y por salir huyendo dejó su hacha por algun lugar del bosque",
+            descripcion = "Alex fue a talar al bosque pero algo lo asusto y por salir huyendo dejo su hacha por algun lugar del bosque",
             tipoMision = TipoMision.Recoleccion,
             objetivo = "hacha",
             cantidadRequerida = 1,
