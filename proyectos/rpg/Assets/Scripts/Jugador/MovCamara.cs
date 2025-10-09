@@ -119,7 +119,7 @@ public class MovCamara : MonoBehaviour
             // Colision con portales del Mundo 5
             if (collision.gameObject && identificador.itemId == "UpM5") // Ir a Mundo 1
             {
-                           Vector3 posicionPlayer = new Vector3(3.45f, -3.5f, 0);
+                Vector3 posicionPlayer = new Vector3(3.45f, -3.5f, 0);
                 this.transform.position = posicionPlayer;
             }
 
