@@ -39,7 +39,9 @@ public class MisionesPlanicie : MonoBehaviour
             recompensas = new List<RecompensaMision>
             {
                 new RecompensaMision { itemRecompensa = "armadura3", cantidadRecompensa = 1 },
-                new RecompensaMision { itemRecompensa = "armadura4", cantidadRecompensa = 1 }
+                new RecompensaMision { itemRecompensa = "armadura4", cantidadRecompensa = 1 },
+                new RecompensaMision { itemRecompensa = "amuletoPlata", cantidadRecompensa = 1 },
+
             },
             EstaActiva = false,
             EstaCompletada = false

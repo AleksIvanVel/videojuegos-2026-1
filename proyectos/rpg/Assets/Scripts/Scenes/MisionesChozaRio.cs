@@ -8,7 +8,7 @@ public class MisionesChozaRio : MonoBehaviour
     {
         Mision misionTopos = new Mision
         {
-            idMision = "nivel1_eliminatopos",
+            idMision = "choza_eliminatopos",
             misionNombre = "Eliminar a los Topos",
             descripcion = "Demasiados Topos estan destruyendo la choza del rio. Deshazte de ellos.",
             tipoMision = TipoMision.Eliminacion,
@@ -28,7 +28,7 @@ public class MisionesChozaRio : MonoBehaviour
 
         Mision misionBuscarHacha = new Mision
         {
-            idMision = "nivel1_buscarhacha",
+            idMision = "choza_buscarhacha",
             misionNombre = "Buscar el hacha de Alex",
             descripcion = "Alex fue a talar al bosque pero algo lo asusto y por salir huyendo dejo su hacha por algun lugar del bosque",
             tipoMision = TipoMision.Recoleccion,
@@ -47,7 +47,7 @@ public class MisionesChozaRio : MonoBehaviour
 
         Mision misionIntercambio = new Mision
         {
-            idMision = "nivel1_intercambiogemas",
+            idMision = "choza_intercambiogemas",
             misionNombre = "Intercambio de gemas por llave",
             descripcion = "Manuel un comerciante del pueblo ofrece un intercambio de gemas por una llave que parece ser de utilidad",
             tipoMision = TipoMision.Recoleccion,

@@ -8,7 +8,7 @@ public class MisionesPueblo: MonoBehaviour
     {
         Mision misionHierbas = new Mision
         {
-            idMision = "nivel0_hierbas",
+            idMision = "pueblo_hierbas",
             misionNombre = "Recolectar hierbas finas",
             descripcion = "Héctor necesita 3 hierbas finas del bosque cercano. Entrégaselas para recibir una moneda.",
             tipoMision = TipoMision.Recoleccion,
