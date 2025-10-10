@@ -71,8 +71,6 @@ public class NPCs : MonoBehaviour
         {
             jugadorCerca = true;
             indicadorInteraccion.SetActive(true);
-
-            Debug.Log("Jugador cerca del NPC: " + gameObject.name + ", tieneMision=" + tieneMision);
         }
     }
 

@@ -6,7 +6,8 @@ public class ActivarPortalPorMision : MonoBehaviour
 {
     [Header("Configuración del portal")]
     public string itemId;               // ID del portal 
-    public string misionIdRequerida;    // Misión que debe estar activa para habilitarlo
+    public string misionIdRequerida;    // Misión asociada al portal
+    public bool activarSoloAlCompletarMision; 
 
     [Header("Objetos relacionados")]
     public GameObject bloqueoPortal;    // Objeto que bloquea el portal 
@@ -17,7 +18,7 @@ public class ActivarPortalPorMision : MonoBehaviour
         if (portalTriggerCollider == null)
             portalTriggerCollider = GetComponent<Collider2D>();
 
-        // Al inicio: portal desactivado, bloqueo activo
+        // Bloquea el portal al iniciar
         if (portalTriggerCollider != null)
             portalTriggerCollider.enabled = false;
 
@@ -28,13 +29,25 @@ public class ActivarPortalPorMision : MonoBehaviour
     void Update()
     {
         Mision mision = MisionManager.instance.ObtenerMisionPorId(misionIdRequerida);
-        //Si la mision esta  o ya se ha completado
-        if ((mision != null && mision.EstaActiva) || mision.EstaCompletada)
-            //Mantiene activo el portal quitando el bloqueo
+
+        if (mision == null)
+            return;
+
+        //  Portal se activa mientras la misión está activa (no necesita completarse)
+        if (!activarSoloAlCompletarMision && (mision.EstaActiva || mision.EstaCompletada))
+        {
             ActivarPortal();
+        }
+        // Portal solo se activa al completar la misión
+        else if (activarSoloAlCompletarMision && mision.EstaCompletada)
+        {
+            ActivarPortal();
+        }
+        // En cualquier otro caso, mantener bloqueado
         else
-            //Mantiene bloqueado el portal 
+        {
             DesactivarPortal();
+        }
     }
 
     private void ActivarPortal()
