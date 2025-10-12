@@ -34,7 +34,7 @@ public class MisionesValleRuinas: MonoBehaviour
                 new ObjetivoMision { itemRequerido = "anillo", cantidadRequerida = 1 },
                 new ObjetivoMision { itemRequerido = "amuleto", cantidadRequerida = 1 },
             },
-            recompensas = new List<RecompensaMision>{},
+            recompensas = new List<RecompensaMision> { },
             EstaActiva = false,
             EstaCompletada = false
         };

@@ -35,10 +35,10 @@ public class MisionManager : MonoBehaviour
     {
         Mision m = ObtenerMisionPorId(idMision);
 
-        // si no existe la misión, termina la función
+        // si no existe la mision, termina la funcion
         if (m == null) return;
 
-        //Si ya está completada termian la funcion
+        //Si ya estï¿½ completada termian la funcion
         if (m.EstaCompletada) return;
 
         m.EstaActiva = false;
@@ -64,12 +64,12 @@ public class MisionManager : MonoBehaviour
 
             foreach (var obj in m.objetivos)
             {
-                // Si el objetivo coincide con el item afectado (enemigo eliminado o ítem recolectado)
+                // Si el objetivo coincide con el item afectado (enemigo eliminado o item recolectado)
                 if (obj.itemRequerido == itemAfectado)
                 {
                     obj.cantidadActual += cantidad;
 
-                    // Si completó este objetivo, verifica si ya completó todos
+                    // Si completas este objetivo, verifica si ya completo todos
                     if (obj.cantidadActual >= obj.cantidadRequerida)
                     {
                         bool todosCompletos = true;
