@@ -36,6 +36,8 @@ public class Ataque : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && timeNextAtaque <= 0)
         {
             atacando = true;
+            // Detiene el movimiento del player
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             activaCapa("Atacar");
             Golpe();
             AudioManager.instance.PlaySFX(SonidoAtaque);

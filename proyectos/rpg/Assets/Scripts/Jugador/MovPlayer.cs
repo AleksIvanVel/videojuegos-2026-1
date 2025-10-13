@@ -32,6 +32,12 @@ public class MovPlayer : MonoBehaviour
             Movimiento();
             AnimacionesPlayer();
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+            PlayerMoviendose = false;
+            ActualizarCapa();
+        }
     }
 
 
