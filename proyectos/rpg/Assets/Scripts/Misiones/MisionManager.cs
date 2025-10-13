@@ -114,4 +114,18 @@ public class MisionManager : MonoBehaviour
             mision.EstaCompletada = false;
         }
     }
+
+    public void ReiniciarTodasLasMisiones()
+    {
+        foreach (var m in misiones)
+        {
+            m.EstaActiva = false;
+            m.EstaCompletada = false;
+
+            foreach (var obj in m.objetivos)
+            {
+                obj.cantidadActual = 0;
+            }
+        }
+    }
 }

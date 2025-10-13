@@ -150,32 +150,34 @@ public class MenuManager : MonoBehaviour
         if (CreditosActive)
         {
             MostrarMenuInicial();
-            Debug.Log("Creditos a Menu");
-
         }
     }
 
-    public void RecargarEscena()
+    public void ReiniciarJuego()
     {
+        Time.timeScale = 1f;
+        if (MisionManager.instance != null)
+        {
+            MisionManager.instance.ReiniciarTodasLasMisiones();
+        }
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
-        Time.timeScale = 1;
     }
 
     public void CerrarJuego()
     {
-        Debug.Log("Saliendo del juego...");
         Application.Quit();
     }
     
     void MostrarValoresAjustes()
-{
-    // Carga el valor guardado para la música (usa el mismo valor por defecto que en AudioManager)
-    float musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-    musicSlider.value = musicVol;
+    {
+        // Carga el valor guardado para la música (usa el mismo valor por defecto que en AudioManager)
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        musicSlider.value = musicVol;
 
-    // Carga el valor guardado para los SFX
-    float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
-    sfxSlider.value = sfxVol;
-}
+        // Carga el valor guardado para los SFX
+        float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+        sfxSlider.value = sfxVol;
+    }
 }
