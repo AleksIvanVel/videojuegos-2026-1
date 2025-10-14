@@ -41,6 +41,7 @@ public class ConsumibleVida : MonoBehaviour
             if (PuedeCurar)
             {
                 numCuras++;
+                AudioManager.instance.PlaySFX(AudioManager.instance.Cura);
             }
         }
         if (numCuras == maxCuras) // El objeto te puede curar n veces antes de desaparecer

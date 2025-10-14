@@ -6,6 +6,7 @@ public class NPCs : MonoBehaviour
     [Header("UI del Diálogo")]
     public GameObject panelDialogo;
     public TextMeshProUGUI textoDelDialogo;
+    public TextMeshProUGUI nombreNPC;
     public GameObject indicadorInteraccion;
 
     [Header("Contenido del Diálogo")]
@@ -23,10 +24,6 @@ public class NPCs : MonoBehaviour
     public bool tieneMision = false;        // Si este NPC entrega misión
     public string misionId;                 // ID de la misión
     private Mision mision;
-
-    [Header("Sonidos")]
-    public AudioClip InicioDialogo;
-    public AudioClip SigDialogo;
 
     private int indiceDialogo = 0;
 
@@ -57,10 +54,22 @@ public class NPCs : MonoBehaviour
         {
             GestionarDialogo();
 
-            if (!dialogoActivo)
-                AudioManager.instance.PlaySFX(InicioDialogo);
+            if (dialogoActivo == false)
+            {
+                if (AudioManager.instance.IniciarDialogo != null)
+                {
+                    AudioSource.PlayClipAtPoint(AudioManager.instance.IniciarDialogo, transform.position);
+                }
+            }
             else
-                AudioManager.instance.PlaySFX(SigDialogo);
+            {
+                if (AudioManager.instance.SiguienteDialogo != null)
+                {
+                    AudioSource.PlayClipAtPoint(AudioManager.instance.SiguienteDialogo, transform.position);
+                }
+            }
+
+            
         }
 
     }
@@ -89,6 +98,7 @@ public class NPCs : MonoBehaviour
         dialogoActivo = true;
         panelDialogo.SetActive(true);
         indicadorInteraccion.SetActive(false);
+        nombreNPC.text = gameObject.name;
 
         string[] dialogosAMostrar = dialogosSinMision;
 

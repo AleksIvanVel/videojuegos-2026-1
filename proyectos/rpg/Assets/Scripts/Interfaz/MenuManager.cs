@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager instance;
+
     [Header("Objetos del Juego")]
     public GameObject Player;
 
@@ -16,38 +18,43 @@ public class MenuManager : MonoBehaviour
     private bool PausaActive = false;
     private bool AjustesActive;
     private bool CreditosActive;
-    private bool MenuInicialActive = true;
-    private bool playerActive;
+    public bool MenuInicialActive = true;
 
-    [Header("Pistas de Audio")]
-    public AudioClip menuMusic;
-    public AudioClip gameMusic;
+
 
     [Header("UI de Ajustes")]
     public Slider musicSlider;
     public Slider sfxSlider;
 
-    [Header("Sonidos")]
-    public AudioClip EntraPausa;
-    public AudioClip SalePausa;
-
     void Start()
     {
+        Time.timeScale = 0;
         MostrarMenuInicial();
-        AudioManager.instance.PlayMusic(menuMusic);
+        AudioManager.instance.PlayMusic(AudioManager.instance.Menu);
+    }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     void Update()
     {
-        Player.SetActive(playerActive);
         // La tecla de Esc como menu de pausa y boton de retroceso en los menus
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Regresar();
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && playerActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && !AjustesActive && !MenuInicialActive)
         {
             StatusPausa();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && AjustesActive)
+        {
+            AjustesActive = false;
         }
 
     }
@@ -59,16 +66,10 @@ public class MenuManager : MonoBehaviour
         {
             MenuInicial.SetActive(false);
             MenuInicialActive = false;
+            Time.timeScale = 1;
         }
 
-        // Activa al jugador para que comience el juego
-        if (playerActive == false)
-        {
-            playerActive = true;
-
-        }
-
-        AudioManager.instance.PlayMusic(gameMusic);
+        AudioManager.instance.PlayMusic(AudioManager.instance.Juego);
     }
 
     public void MostararAjustes()
@@ -118,16 +119,15 @@ public class MenuManager : MonoBehaviour
         {
             MostrarPausa(false);
             Time.timeScale = 1;
+            AudioManager.instance.PlayUnscaledSFX(AudioManager.instance.SalirPausa);
             PausaActive = false;
-            AudioManager.instance.PlaySFX(SalePausa);
-
         }
         else
         {
             MostrarPausa(true);
             Time.timeScale = 0;
+            AudioManager.instance.PlayUnscaledSFX(AudioManager.instance.Pausa);
             PausaActive = true;
-            AudioManager.instance.PlaySFX(EntraPausa);
         }
     }
 
@@ -143,6 +143,8 @@ public class MenuManager : MonoBehaviour
             else if (MenuInicialActive == true) //Se accedio a Ajustes desde el Menu Principal
             {
                 MostrarMenuInicial();
+                AjustesActive = false;
+                CreditosActive = false;
             }
         }
 

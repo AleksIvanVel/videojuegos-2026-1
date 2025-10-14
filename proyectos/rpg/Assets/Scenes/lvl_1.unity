@@ -1164,7 +1164,6 @@ MonoBehaviour:
   - {fileID: 1233753192}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &17758001
 SpriteRenderer:
@@ -1816,7 +1815,7 @@ Transform:
   m_GameObject: {fileID: 29245207}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.001, y: 0.711, z: 0.001513077}
+  m_LocalPosition: {x: 27.001, y: 8.43, z: 0.001513077}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1857,7 +1856,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1902,7 +1901,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1913,7 +1912,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.8, y: 0.5}
   m_EdgeRadius: 0
 --- !u!114 &29245211
 MonoBehaviour:
@@ -1929,6 +1928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 820890107}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -1940,8 +1940,6 @@ MonoBehaviour:
     un anillo m\xE1gico"
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &29911519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,7 +3141,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50727507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3153,11 +3151,11 @@ RectTransform:
   - {fileID: 1093361498}
   - {fileID: 1315253920}
   - {fileID: 1180548346}
-  m_Father: {fileID: 310566730}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 959.99994, y: 539.99994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &51499325
@@ -3882,6 +3880,140 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &75031719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75031720}
+  - component: {fileID: 75031722}
+  - component: {fileID: 75031721}
+  m_Layer: 5
+  m_Name: NPC Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &75031720
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75031719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1486765052}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 470, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &75031721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75031719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 1a31d500de246da46881456b9ca15c37, type: 2}
+  m_sharedMaterial: {fileID: 7763082486587102251, guid: 1a31d500de246da46881456b9ca15c37, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 32
+  m_VerticalAlignment: 4096
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &75031722
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75031719}
+  m_CullTransparentMesh: 1
 --- !u!1 &76795289
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,7 +5003,6 @@ MonoBehaviour:
   - {fileID: 1449002483}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &89220475
 SpriteRenderer:
@@ -5066,6 +5197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 850529738}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -5074,8 +5206,6 @@ MonoBehaviour:
   - Al Pueblo
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &90707227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,7 +5635,6 @@ MonoBehaviour:
   - {fileID: 327733581}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &96167345
 SpriteRenderer:
@@ -7796,7 +7925,6 @@ MonoBehaviour:
   - {fileID: 1923765777}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &131566837
 SpriteRenderer:
@@ -9693,6 +9821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1992503992}
   dialogosIniciales:
   - "Oye Giacomino, \xBFTe puedo pedir un favor?"
@@ -9708,8 +9837,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: choza_buscarhacha
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &169238251
 GameObject:
   m_ObjectHideFlags: 0
@@ -10227,6 +10354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 240560840}
   dialogosIniciales:
   - Solo me hace falta una gema para terminar de construir mis herramientas
@@ -10237,8 +10365,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: villa_gemaverde
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &177776624
 GameObject:
   m_ObjectHideFlags: 0
@@ -11073,6 +11199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 42570698}
   dialogosIniciales:
   - Vaya! Este cofre necesita una llave dorada para poder abrirse
@@ -11083,8 +11210,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: valle_abrirCofre_llaveDorada
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &186131702
 GameObject:
   m_ObjectHideFlags: 0
@@ -11098,7 +11223,7 @@ GameObject:
   - component: {fileID: 186131705}
   - component: {fileID: 186131704}
   m_Layer: 0
-  m_Name: Letrero (1)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11226,6 +11351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1506544628}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -11234,8 +11360,6 @@ MonoBehaviour:
   - A la Planicie
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &189257073
 GameObject:
   m_ObjectHideFlags: 0
@@ -11628,7 +11752,6 @@ MonoBehaviour:
   - {fileID: 263757769}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &198736066
 SpriteRenderer:
@@ -13415,7 +13538,7 @@ GameObject:
   - component: {fileID: 230733427}
   - component: {fileID: 230733426}
   m_Layer: 0
-  m_Name: Letrero (1)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13543,6 +13666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 265517297}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -13551,8 +13675,6 @@ MonoBehaviour:
   - Al Valle
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &231190994
 GameObject:
   m_ObjectHideFlags: 0
@@ -15016,90 +15138,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &247559325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 247559326}
-  - component: {fileID: 247559327}
-  m_Layer: 0
-  m_Name: Base
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &247559326
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247559325}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &247559327
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 247559325}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 122237871
-  m_SortingLayer: 5
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 787206e13267f214ea67f6d9a8b858dd, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &249371832
 GameObject:
   m_ObjectHideFlags: 0
@@ -16080,7 +16118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -16089,7 +16127,6 @@ MonoBehaviour:
   - {fileID: 542578636}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &266433918
 SpriteRenderer:
@@ -17130,7 +17167,6 @@ MonoBehaviour:
   - {fileID: 304080044}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &294420558
 SpriteRenderer:
@@ -17441,7 +17477,6 @@ MonoBehaviour:
   - {fileID: 1991787617}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &301781257
 SpriteRenderer:
@@ -17921,7 +17956,6 @@ RectTransform:
   - {fileID: 367390256}
   - {fileID: 1469814051}
   - {fileID: 972365838}
-  - {fileID: 50727508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19622,7 +19656,6 @@ MonoBehaviour:
   - {fileID: 1503346021}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!95 &332533506
 Animator:
@@ -21155,7 +21188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -21164,7 +21197,6 @@ MonoBehaviour:
   - {fileID: 290876710}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &354548445
 SpriteRenderer:
@@ -24814,7 +24846,6 @@ MonoBehaviour:
   - {fileID: 1810445234}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &440831970
 SpriteRenderer:
@@ -25194,7 +25225,6 @@ MonoBehaviour:
   - {fileID: 1283651420}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &443152419
 SpriteRenderer:
@@ -25971,6 +26001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 0}
   indicadorInteraccion: {fileID: 1333611822}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -25978,8 +26009,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &462656238
 GameObject:
   m_ObjectHideFlags: 0
@@ -26030,7 +26059,7 @@ GameObject:
   - component: {fileID: 467887991}
   - component: {fileID: 467887990}
   m_Layer: 0
-  m_Name: Letrero (3)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26158,6 +26187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 38989831}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -26166,8 +26196,6 @@ MonoBehaviour:
   - A la Planicie
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &468530035
 GameObject:
   m_ObjectHideFlags: 0
@@ -28406,7 +28434,6 @@ MonoBehaviour:
   - {fileID: 367893179}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &511753081
 SpriteRenderer:
@@ -29660,7 +29687,6 @@ MonoBehaviour:
   - {fileID: 1700847526}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &523875808
 SpriteRenderer:
@@ -29794,7 +29820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f87ad96de184d46a7aa3e0262f5426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: Dr2M3
+  itemId: DrM3
   misionIdRequerida: villa_amuletos
   activarSoloAlCompletarMision: 1
   bloqueoPortal: {fileID: 843970329}
@@ -29811,7 +29837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf4fa20ff4a3a541bea574d46b39fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: Dr2M3
+  itemId: DrM3
 --- !u!61 &524251424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31565,8 +31591,6 @@ MonoBehaviour:
   moneda: {fileID: 21300000, guid: 601ee6102f54d41e9908ba8c8ade2173, type: 3}
   pan: {fileID: 21300000, guid: 71a74455f35c2574c8072f6a0b2f2047, type: 3}
   contenedor: {fileID: 0}
-  AbrirInventario: {fileID: 0}
-  CerrarInventario: {fileID: 0}
 --- !u!1 &551826097
 GameObject:
   m_ObjectHideFlags: 0
@@ -32016,7 +32040,6 @@ MonoBehaviour:
   - {fileID: 517745356}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &554399935
 SpriteRenderer:
@@ -33811,7 +33834,7 @@ GameObject:
   - component: {fileID: 597406648}
   - component: {fileID: 597406647}
   m_Layer: 0
-  m_Name: Letrero (1)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33939,6 +33962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 182611359}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -33947,8 +33971,6 @@ MonoBehaviour:
   - A la Choza del Rio
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &598341485
 GameObject:
   m_ObjectHideFlags: 0
@@ -35183,6 +35205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 0}
   indicadorInteraccion: {fileID: 368404549}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -35190,8 +35213,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &642362996
 GameObject:
   m_ObjectHideFlags: 0
@@ -38744,7 +38765,6 @@ MonoBehaviour:
   - {fileID: 1525276846}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &689247378
 SpriteRenderer:
@@ -39549,7 +39569,6 @@ MonoBehaviour:
   - {fileID: 298530633}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &696093344
 SpriteRenderer:
@@ -40843,6 +40862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1375039396}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -40850,8 +40870,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &724117433
 GameObject:
   m_ObjectHideFlags: 0
@@ -44200,7 +44218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -44209,7 +44227,6 @@ MonoBehaviour:
   - {fileID: 1701522440}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &807632972
 SpriteRenderer:
@@ -44478,7 +44495,7 @@ GameObject:
   - component: {fileID: 818127548}
   - component: {fileID: 818127547}
   m_Layer: 0
-  m_Name: Letrero (2)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44606,6 +44623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 217475875}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -44614,8 +44632,6 @@ MonoBehaviour:
   - Al Valle
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &818706706
 GameObject:
   m_ObjectHideFlags: 0
@@ -45443,7 +45459,7 @@ GameObject:
   - component: {fileID: 831823387}
   - component: {fileID: 831823386}
   m_Layer: 0
-  m_Name: Letrero (2)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45571,6 +45587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 237272775}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -45579,8 +45596,6 @@ MonoBehaviour:
   - Al Valle
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &838842045
 GameObject:
   m_ObjectHideFlags: 0
@@ -47450,6 +47465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1897480514}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -47457,8 +47473,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &878820209
 GameObject:
   m_ObjectHideFlags: 0
@@ -59258,7 +59272,7 @@ GameObject:
   - component: {fileID: 923401693}
   - component: {fileID: 923401692}
   m_Layer: 0
-  m_Name: Cofre Llave Azul
+  m_Name: Cofre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59386,6 +59400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1996564331}
   dialogosIniciales:
   - Vaya! Este cofre necesita una llave azul para poder abrirse
@@ -59396,8 +59411,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: planicie_abrircofre_llaveAzul
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &924691433
 GameObject:
   m_ObjectHideFlags: 0
@@ -60002,7 +60015,6 @@ MonoBehaviour:
   - {fileID: 1988089721}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &927613625
 SpriteRenderer:
@@ -62270,7 +62282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -62279,7 +62291,6 @@ MonoBehaviour:
   - {fileID: 1228102876}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &959517315
 SpriteRenderer:
@@ -66372,7 +66383,6 @@ MonoBehaviour:
   - {fileID: 598341486}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!95 &1046884089
 Animator:
@@ -68517,17 +68527,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674a5c1653e6f4646ad5ca266a428588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1939913455}
+  Player: {fileID: 0}
   MenuInicial: {fileID: 367390255}
   Ajustes: {fileID: 1469814050}
   Creditos: {fileID: 972365837}
   Pausa: {fileID: 1075305923}
-  menuMusic: {fileID: 8300000, guid: 4b806adc6cb806947a0567b82c96b728, type: 3}
-  gameMusic: {fileID: 8300000, guid: 65cff6433d0e4e843be58e9ccbda1ffb, type: 3}
+  MenuInicialActive: 1
   musicSlider: {fileID: 0}
   sfxSlider: {fileID: 0}
-  EntraPausa: {fileID: 0}
-  SalePausa: {fileID: 0}
 --- !u!1 &1095509453
 GameObject:
   m_ObjectHideFlags: 0
@@ -68982,7 +68989,6 @@ MonoBehaviour:
   - {fileID: 1976637817}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!95 &1103944627
 Animator:
@@ -70094,7 +70100,6 @@ MonoBehaviour:
   - {fileID: 363419245}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1120470740
 SpriteRenderer:
@@ -70407,6 +70412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 973909196}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -70415,8 +70421,6 @@ MonoBehaviour:
   - Al Bosque
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1127972668
 GameObject:
   m_ObjectHideFlags: 0
@@ -70885,9 +70889,9 @@ SpriteRenderer:
   m_SortingLayerID: 78571249
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8076200b028539b41941d43687793aa6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fcd7ed13a6bd82b45af7babcc161243b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -71002,9 +71006,9 @@ SpriteRenderer:
   m_SortingLayerID: 122237871
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dac55ea31b5a41642b6ac3af6091d55c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89d0c382c5ab0b7449a411cd22894196, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -75023,7 +75027,6 @@ MonoBehaviour:
   - {fileID: 147647729}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1208089482
 SpriteRenderer:
@@ -75276,7 +75279,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1093361499}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: RecargarEscena
+        m_MethodName: ReiniciarJuego
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -76114,6 +76117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 327457214}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -76122,8 +76126,6 @@ MonoBehaviour:
   - Al Pueblo
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1225663357
 GameObject:
   m_ObjectHideFlags: 0
@@ -76676,7 +76678,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 2.21}
   m_EdgeRadius: 0
 --- !u!1 &1228102875
 GameObject:
@@ -77172,199 +77174,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236380030}
   m_CullTransparentMesh: 1
---- !u!1 &1236471813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1236471814}
-  - component: {fileID: 1236471817}
-  - component: {fileID: 1236471816}
-  - component: {fileID: 1236471815}
-  - component: {fileID: 1236471818}
-  m_Layer: 0
-  m_Name: Colision
-  m_TagString: limites
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1236471814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236471813}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21, y: -0.15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1236471815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236471813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
---- !u!61 &1236471816
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236471813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.3}
-  m_EdgeRadius: 0
---- !u!212 &1236471817
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236471813}
-  m_Enabled: 0
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 78571249
-  m_SortingLayer: 9
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!61 &1236471818
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236471813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1238136039
 GameObject:
   m_ObjectHideFlags: 0
@@ -78657,6 +78466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 954501889}
   dialogosIniciales:
   - "Hace a\xF1os, esta villa florec\xEDa\u2026 hasta que el amuleto se rompi\xF3. "
@@ -78673,8 +78483,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: villa_amuletos
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1260360675
 GameObject:
   m_ObjectHideFlags: 0
@@ -80034,7 +79842,6 @@ MonoBehaviour:
   - {fileID: 1906426800}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!95 &1281534334
 Animator:
@@ -80673,6 +80480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 885716139}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -80684,8 +80492,6 @@ MonoBehaviour:
     no te perder\xE1s."
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1291232791
 GameObject:
   m_ObjectHideFlags: 0
@@ -82136,6 +81942,24 @@ MonoBehaviour:
   sfxSource: {fileID: 1648159812}
   PorcentajeMusica: {fileID: 1641783598}
   PorcentajeSFX: {fileID: 222701383}
+  Menu: {fileID: 8300000, guid: 4b806adc6cb806947a0567b82c96b728, type: 3}
+  Juego: {fileID: 8300000, guid: 65cff6433d0e4e843be58e9ccbda1ffb, type: 3}
+  Atacar: {fileID: 8300000, guid: b00788bf79644fb4ea9cd06eac5c974e, type: 3}
+  Caminar: {fileID: 8300000, guid: 7606758c7a761f2498c90000f96eec2f, type: 3}
+  "RecibirDa\xF1o": {fileID: 8300000, guid: fc778e4fc17be74418a80bdf9e51920f, type: 3}
+  Disparar: {fileID: 8300000, guid: 6ef9f471230bf2d44b07a7a24584b0f1, type: 3}
+  IniciarDialogo: {fileID: 8300000, guid: 6eaa55a6e9c2a3546b334e781184593f, type: 3}
+  SiguienteDialogo: {fileID: 8300000, guid: 2695ce92bc024784091d5c42a73d4b51, type: 3}
+  Pausa: {fileID: 8300000, guid: 3752cbe1504dedd4ba6ad2002fe00a25, type: 3}
+  SalirPausa: {fileID: 8300000, guid: fdd16920827904346abda2ee0bf224f6, type: 3}
+  Inventario: {fileID: 8300000, guid: 0d8b338e87de0ff46be06d3450ec8ba7, type: 3}
+  CerrarInventario: {fileID: 8300000, guid: fe1b56ddd11a2b14d8b9be40d89bd897, type: 3}
+  RecolectarObjeto: {fileID: 8300000, guid: 501c2ba9546d0a943844323018d5437e, type: 3}
+  Cura: {fileID: 8300000, guid: ee9d2835399d4b949a7517baba93e0df, type: 3}
+  Mana: {fileID: 8300000, guid: 8f9880f4682c4e84ba998804fff5f5ef, type: 3}
+  EliminarEnemigo: {fileID: 8300000, guid: 1fcceca4348005a4eada8a885c6e0837, type: 3}
+  GameOver: {fileID: 0}
+  WinGame: {fileID: 0}
 --- !u!1 &1317523924
 GameObject:
   m_ObjectHideFlags: 0
@@ -83640,7 +83464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -83649,7 +83473,6 @@ MonoBehaviour:
   - {fileID: 1095509454}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1342801224
 SpriteRenderer:
@@ -83923,7 +83746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -83932,7 +83755,6 @@ MonoBehaviour:
   - {fileID: 1317523925}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1351028872
 SpriteRenderer:
@@ -84262,6 +84084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1527316057}
   dialogosIniciales:
   - "\xA1\xA1\xA1Ayuda!!!! Estos topos, destruyen mi hogar y no puedo hacer nada"
@@ -84273,8 +84096,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: choza_eliminatopos
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1359646683
 GameObject:
   m_ObjectHideFlags: 0
@@ -84288,7 +84109,7 @@ GameObject:
   - component: {fileID: 1359646686}
   - component: {fileID: 1359646685}
   m_Layer: 0
-  m_Name: Cofre Llave Verde
+  m_Name: Cofre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84416,6 +84237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1238220335}
   dialogosIniciales:
   - Vaya! Este cofre necesita una llave verde para poder abrirse
@@ -84426,8 +84248,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: planicie_abrircofre_llaveVerde
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1361217384
 GameObject:
   m_ObjectHideFlags: 0
@@ -85557,7 +85377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -85566,7 +85386,6 @@ MonoBehaviour:
   - {fileID: 161069441}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1383622624
 SpriteRenderer:
@@ -85796,7 +85615,6 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   - {fileID: 2141542606}
-  - {fileID: 1939913456}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1384122828
@@ -85814,7 +85632,6 @@ MonoBehaviour:
   velMov: 3
   rb: {fileID: 1384122825}
   anim: {fileID: 1384122823}
-  Caminar: {fileID: 0}
 --- !u!114 &1384122829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85843,10 +85660,6 @@ MonoBehaviour:
   vidaPlayer: {fileID: 1294305818}
   manaPlayer: {fileID: 1617906767}
   gameOver: {fileID: 1517496473}
-  GameOver: {fileID: 0}
-  "Da\xF1o": {fileID: 0}
-  Cura: {fileID: 0}
-  Mana: {fileID: 0}
 --- !u!114 &1384122831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85863,7 +85676,6 @@ MonoBehaviour:
   timeCooldownAtaques: 0
   timeNextAtaque: 0
   puntoEmision: {fileID: 2141542606}
-  SonidoDisparo: {fileID: 0}
 --- !u!114 &1384122832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85881,7 +85693,6 @@ MonoBehaviour:
   danioGolpe: 1
   timeCooldownAtaques: 0.5
   timeNextAtaque: 0
-  SonidoAtaque: {fileID: 0}
 --- !u!114 &1384122833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87750,6 +87561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1333176171}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -87761,8 +87573,6 @@ MonoBehaviour:
     cuidado, all\xED afuera no todo es bueno."
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1412809425
 GameObject:
   m_ObjectHideFlags: 0
@@ -87935,6 +87745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 112334816}
   dialogosIniciales:
   - "Puedes visitar el valle de las ruinas antiguas. Si buscas respuestas, quiz\xE1s
@@ -87948,8 +87759,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: villa_intercambio
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1417776190
 GameObject:
   m_ObjectHideFlags: 0
@@ -88131,6 +87940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1392428061}
   dialogosIniciales:
   - "\xA1Hola viajero!"
@@ -88146,8 +87956,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: choza_intercambiogemas
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1422826713
 GameObject:
   m_ObjectHideFlags: 0
@@ -88407,6 +88215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1705144732}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -88418,8 +88227,6 @@ MonoBehaviour:
     en este lugar.."
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1431866096
 GameObject:
   m_ObjectHideFlags: 0
@@ -89981,7 +89788,7 @@ GameObject:
   - component: {fileID: 1467858266}
   - component: {fileID: 1467858268}
   m_Layer: 0
-  m_Name: Hector
+  m_Name: Hector "El Father"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90109,6 +89916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1308444660}
   dialogosIniciales:
   - "Giacomino, qu\xE9 bueno verte de nuevo. Las hierbas que trajiste ayer\u2026
@@ -90123,8 +89931,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: pueblo_hierbas
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1468014096
 GameObject:
   m_ObjectHideFlags: 0
@@ -90310,7 +90116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -90319,7 +90125,6 @@ MonoBehaviour:
   - {fileID: 1395478307}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1468462237
 SpriteRenderer:
@@ -90754,7 +90559,7 @@ GameObject:
   - component: {fileID: 1473137067}
   - component: {fileID: 1473137066}
   m_Layer: 0
-  m_Name: Letrero (1)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90882,6 +90687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 476781739}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -90890,8 +90696,6 @@ MonoBehaviour:
   - Al Valle
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1474060802
 GameObject:
   m_ObjectHideFlags: 0
@@ -91058,7 +90862,6 @@ MonoBehaviour:
   - {fileID: 1471119544}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1474060809
 SpriteRenderer:
@@ -92085,6 +91888,82 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1486765051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1486765052}
+  - component: {fileID: 1486765054}
+  - component: {fileID: 1486765053}
+  m_Layer: 5
+  m_Name: Nombre NPC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1486765052
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486765051}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 75031720}
+  m_Father: {fileID: 1637003731}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 300, y: 0}
+  m_SizeDelta: {x: 500, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1486765053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486765051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.18823531, g: 0.1254902, b: 0.054901965, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1486765054
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486765051}
+  m_CullTransparentMesh: 1
 --- !u!1 &1487709715
 GameObject:
   m_ObjectHideFlags: 0
@@ -92492,7 +92371,7 @@ GameObject:
   - component: {fileID: 1495978359}
   - component: {fileID: 1495978358}
   m_Layer: 0
-  m_Name: Letrero (2)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92620,6 +92499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 746713241}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -92628,8 +92508,6 @@ MonoBehaviour:
   - A la Villa Antigua
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1497030226
 GameObject:
   m_ObjectHideFlags: 0
@@ -92655,7 +92533,7 @@ Transform:
   m_GameObject: {fileID: 1497030226}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -6.27, z: 0}
+  m_LocalPosition: {x: 0.41, y: -5.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93950,7 +93828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f87ad96de184d46a7aa3e0262f5426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: DrM3
+  itemId: Dr2M3
   misionIdRequerida: villa_amuletos
   activarSoloAlCompletarMision: 1
   bloqueoPortal: {fileID: 1263030595}
@@ -93967,7 +93845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf4fa20ff4a3a541bea574d46b39fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: DrM3
+  itemId: Dr2M3
 --- !u!61 &1520487577
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -94959,6 +94837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 432034761}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -94967,8 +94846,6 @@ MonoBehaviour:
   - Al Pueblo
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1535773819
 GameObject:
   m_ObjectHideFlags: 0
@@ -95894,7 +95771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -95903,7 +95780,6 @@ MonoBehaviour:
   - {fileID: 1355539685}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1547995698
 SpriteRenderer:
@@ -96120,7 +95996,6 @@ MonoBehaviour:
   - {fileID: 1597657844}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1548865927
 SpriteRenderer:
@@ -96367,90 +96242,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1561542389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1561542390}
-  - component: {fileID: 1561542391}
-  m_Layer: 0
-  m_Name: Top
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1561542390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561542389}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1561542391
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561542389}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 78571249
-  m_SortingLayer: 9
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f3df8dfeb6ff6c14daeac37c96ba6134, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1562629939
 GameObject:
   m_ObjectHideFlags: 0
@@ -97209,6 +97000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 823158691}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -97216,8 +97008,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1575435889
 GameObject:
   m_ObjectHideFlags: 0
@@ -99294,7 +99084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1637003731
 RectTransform:
   m_ObjectHideFlags: 0
@@ -99307,6 +99097,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1486765052}
   - {fileID: 1845430423}
   - {fileID: 513765073}
   m_Father: {fileID: 310566730}
@@ -99670,7 +99461,6 @@ MonoBehaviour:
   - {fileID: 1627796969}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1641643906
 SpriteRenderer:
@@ -106453,6 +106243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1625116827}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -106460,8 +106251,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1771783887
 GameObject:
   m_ObjectHideFlags: 0
@@ -106993,90 +106782,6 @@ Transform:
   - {fileID: 996829594}
   m_Father: {fileID: 1106454549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1780088302
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1780088303}
-  - component: {fileID: 1780088304}
-  m_Layer: 0
-  m_Name: Top
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1780088303
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780088302}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1780088304
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1780088302}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 78571249
-  m_SortingLayer: 9
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f630be9225c75254b8178cb84463d555, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1781112582
 GameObject:
   m_ObjectHideFlags: 0
@@ -109338,7 +109043,6 @@ MonoBehaviour:
   - {fileID: 1181436408}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1805367623
 SpriteRenderer:
@@ -110618,7 +110322,7 @@ GameObject:
   - component: {fileID: 1827597817}
   - component: {fileID: 1827597816}
   m_Layer: 0
-  m_Name: Letrero (2)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110746,6 +110450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1972535059}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -110754,8 +110459,6 @@ MonoBehaviour:
   - A la Choza del Rio
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1827888961
 GameObject:
   m_ObjectHideFlags: 0
@@ -110968,6 +110671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1728539842}
   dialogosIniciales:
   - "Estas ruinas lucen extra\xF1as"
@@ -110978,8 +110682,6 @@ MonoBehaviour:
   dialogosSinMision: []
   tieneMision: 1
   misionId: valle_fin
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1833368784
 GameObject:
   m_ObjectHideFlags: 0
@@ -137225,7 +136927,7 @@ GameObject:
   - component: {fileID: 1913326644}
   - component: {fileID: 1913326643}
   m_Layer: 0
-  m_Name: Letrero (1)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137353,6 +137055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 2047670256}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -137361,8 +137064,6 @@ MonoBehaviour:
   - A la Choza del Rio
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &1914124730
 GameObject:
   m_ObjectHideFlags: 0
@@ -137606,7 +137307,6 @@ MonoBehaviour:
   - {fileID: 1962544741}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1917144144
 SpriteRenderer:
@@ -138229,7 +137929,6 @@ MonoBehaviour:
   - {fileID: 996829594}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1927857019
 SpriteRenderer:
@@ -139027,37 +138726,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1939913455
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1939913456}
-  m_Layer: 0
-  m_Name: playerActive
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1939913456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939913455}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1384122827}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941872346
 GameObject:
   m_ObjectHideFlags: 0
@@ -139802,7 +139470,6 @@ MonoBehaviour:
   - {fileID: 1468014097}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &1958664217
 SpriteRenderer:
@@ -142064,7 +141731,6 @@ MonoBehaviour:
   - {fileID: 458368746}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!95 &1994527072
 Animator:
@@ -143005,7 +142671,6 @@ MonoBehaviour:
   - {fileID: 1627738568}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!95 &2010693800
 Animator:
@@ -143506,7 +143171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16ab4fb66742340b6baaab21811af538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaEnemigo: 1
+  vidaEnemigo: 2
   numEnemigosEliminados: 0
   personaje: {fileID: 1384122827}
   puntosRuta:
@@ -143515,7 +143180,6 @@ MonoBehaviour:
   - {fileID: 489041281}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &2015498215
 SpriteRenderer:
@@ -143735,7 +143399,6 @@ MonoBehaviour:
   - {fileID: 1874479701}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &2017148820
 SpriteRenderer:
@@ -144146,7 +143809,6 @@ MonoBehaviour:
   - {fileID: 1925894969}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &2019398100
 SpriteRenderer:
@@ -146468,7 +146130,6 @@ MonoBehaviour:
   - {fileID: 1374161280}
   distanciaDeteccionPlayer: 2
   umbralLlegada: 0.2
-  EliminarEnemigo: {fileID: 0}
   tipoEnemigo: 
 --- !u!212 &2079070058
 SpriteRenderer:
@@ -148703,6 +148364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 2020689219}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -148711,8 +148373,6 @@ MonoBehaviour:
   - Al Bosque
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &2132490200
 GameObject:
   m_ObjectHideFlags: 0
@@ -148984,7 +148644,7 @@ GameObject:
   - component: {fileID: 2135683396}
   - component: {fileID: 2135683395}
   m_Layer: 0
-  m_Name: Letrero (4)
+  m_Name: Letrero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149112,6 +148772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelDialogo: {fileID: 1637003730}
   textoDelDialogo: {fileID: 1845430421}
+  nombreNPC: {fileID: 75031721}
   indicadorInteraccion: {fileID: 1274462789}
   dialogosIniciales: []
   dialogosMisionActiva: []
@@ -149120,8 +148781,6 @@ MonoBehaviour:
   - A la Planicie
   tieneMision: 0
   misionId: 
-  InicioDialogo: {fileID: 0}
-  SigDialogo: {fileID: 0}
 --- !u!1 &2136717832
 GameObject:
   m_ObjectHideFlags: 0
@@ -149976,7 +149635,7 @@ Transform:
   m_GameObject: {fileID: 2141542605}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33, y: -0.18, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -150134,6 +149793,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1384122827}
+  - {fileID: 50727508}
   - {fileID: 310566730}
   - {fileID: 32036634}
   - {fileID: 2029818887}
@@ -150147,7 +149807,3 @@ SceneRoots:
   - {fileID: 3000782}
   - {fileID: 271296126}
   - {fileID: 1438964387}
-  - {fileID: 247559326}
-  - {fileID: 1236471814}
-  - {fileID: 1561542390}
-  - {fileID: 1780088303}

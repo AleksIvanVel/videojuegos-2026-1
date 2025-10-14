@@ -10,9 +10,6 @@ public class Disparo : MonoBehaviour
     public Transform puntoEmision;
     private Animator anim;
 
-    [Header("Sonidos")]
-    public AudioClip SonidoDisparo;
-
     private GameObject player;
 
     public static int dirDisparo = 0;
@@ -30,24 +27,31 @@ public class Disparo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeNextAtaque < 0.05f && timeCooldownAtaques > 0)
+        if (Time.timeScale == 1)
         {
-            disparando = false;
+            if (timeNextAtaque < 0.05f && timeCooldownAtaques > 0)
+            {
+                disparando = false;
+            }
+            if (timeNextAtaque > 0)
+            {
+                timeNextAtaque -= Time.deltaTime;
+            }
+            if (Input.GetButtonDown("Fire2") && timeNextAtaque <= 0 && VidasPlayer.mana > 0)
+            {
+                disparando = true;
+                activaCapa("Atacar");
+                if (AudioManager.instance.Disparar != null)
+                {
+                    AudioSource.PlayClipAtPoint(AudioManager.instance.Disparar, transform.position);
+                }
+                Disparar();
+                VidasPlayer.mana--;
+                player.GetComponent<VidasPlayer>().DibujarMana(VidasPlayer.mana);
+                timeNextAtaque = timeCooldownAtaques;
+            }
         }
-        if (timeNextAtaque > 0)
-        {
-            timeNextAtaque -= Time.deltaTime;
-        }
-        if (Input.GetButtonDown("Fire2") && timeNextAtaque <= 0 && VidasPlayer.mana > 0)
-        {
-            disparando = true;
-            activaCapa("Atacar");
-            AudioManager.instance.PlaySFX(SonidoDisparo);
-            Disparar();
-            VidasPlayer.mana--;
-            player.GetComponent<VidasPlayer>().DibujarMana(VidasPlayer.mana);
-            timeNextAtaque = timeCooldownAtaques;
-        }
+        
     }
 
     private void Disparar()

@@ -18,11 +18,7 @@ public class Inventario : MonoBehaviour
     public Sprite amuleto, amuletoPlata, anillo, armadura1, armadura2, armadura3, armadura4,
     escudo, gemaAzul, gemaRoja, gemaVerde, hierbas, hacha, llaveDorada, llaveAzul, llaveVerde, llavePlateada, moneda, pan, contenedor;
 
-    [Header("Sonidos")]
-    public AudioClip AbrirInventario;
-    public AudioClip CerrarInventario;
-
-    // Evento público que otros scripts pueden suscribirse
+    // Evento pï¿½blico que otros scripts pueden suscribirse
     public static event Action<string> OnItemAgregado;
 
     // Diccionario para manejar cantidades de items
@@ -36,7 +32,7 @@ public class Inventario : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && MenuManager.instance.MenuInicialActive == false)
         {
             StatusInventario();
         }
@@ -48,7 +44,12 @@ public class Inventario : MonoBehaviour
         goInventario.SetActive(muestraInventario);
         Time.timeScale = muestraInventario ? 0 : 1;
 
-        AudioManager.instance.PlaySFX(muestraInventario ? AbrirInventario : CerrarInventario);
+        if (AudioManager.instance.Inventario != null)
+        {
+            AudioManager.instance.sfxSource.loop = true;
+            AudioManager.instance.PlayUnscaledSFX(muestraInventario ? AudioManager.instance.Inventario : AudioManager.instance.CerrarInventario);
+        }
+        
     }
 
     public void EscribeEnArreglo()
@@ -174,7 +175,7 @@ public class Inventario : MonoBehaviour
         if (!cantidadItems.ContainsKey(item)) return;
         cantidadItems[item] = Mathf.Max(0, cantidadItems[item] - cantidad);
 
-        // Actualizar visual si está en inventario
+        // Actualizar visual si estï¿½ en inventario
         int pos = VerificaEnArreglo(item);
         if (pos != -1)
             textoContadores[pos].text = "x" + cantidadItems[item];

@@ -27,9 +27,13 @@ public class WinGame : MonoBehaviour
         }
     }
 
-    void MostrarWinPanel()
+    IEnumerator MostrarWinPanel()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.WinGame);
+        AudioManager.instance.StopMusic();
+        yield return new WaitForSeconds(0.3f);
         winPanel.SetActive(true);
+        
         Time.timeScale = 0f; // Pausa el juego
     }
 }

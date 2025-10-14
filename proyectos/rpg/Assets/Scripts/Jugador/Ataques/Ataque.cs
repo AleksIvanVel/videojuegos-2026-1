@@ -13,9 +13,6 @@ public class Ataque : MonoBehaviour
 
     public static bool atacando;
 
-    [Header("Sonidos")]
-    public AudioClip SonidoAtaque;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,24 +22,28 @@ public class Ataque : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timeNextAtaque < 0.05f && timeCooldownAtaques > 0)
+        if (Time.timeScale == 1)
         {
-            atacando = false;
+            if (timeNextAtaque < 0.05f && timeCooldownAtaques > 0)
+            {
+                atacando = false;
+            }
+            if (timeNextAtaque > 0)
+            {
+                timeNextAtaque -= Time.deltaTime;
+            }
+            if (Input.GetButtonDown("Fire1") && timeNextAtaque <= 0)
+            {
+                atacando = true;
+                // Detiene el movimiento del player
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                activaCapa("Atacar");
+                Golpe();
+                AudioManager.instance.PlaySFX(AudioManager.instance.Atacar);
+                timeNextAtaque = timeCooldownAtaques;
+            }
         }
-        if (timeNextAtaque > 0)
-        {
-            timeNextAtaque -= Time.deltaTime;
-        }
-        if (Input.GetButtonDown("Fire1") && timeNextAtaque <= 0)
-        {
-            atacando = true;
-            // Detiene el movimiento del player
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            activaCapa("Atacar");
-            Golpe();
-            AudioManager.instance.PlaySFX(SonidoAtaque);
-            timeNextAtaque = timeCooldownAtaques;
-        }
+        
     }
 
     private void Golpe()

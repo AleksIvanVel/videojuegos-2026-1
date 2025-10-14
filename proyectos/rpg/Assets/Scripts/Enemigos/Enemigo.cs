@@ -19,9 +19,6 @@ public class Enemigo : MonoBehaviour
     private Transform mirarHacia;
     [SerializeField] private float umbralLlegada = 0.2f; // Distancia para considerar que llegó al punto de ruta
 
-    [Header("Sonidos")]
-    public AudioClip EliminarEnemigo;
-
 
     [SerializeField] 
     private string tipoEnemigo; 
@@ -124,9 +121,11 @@ public class Enemigo : MonoBehaviour
         {
             numEnemigosEliminados++;
             MisionManager.instance.ActualizarProgresoMision("enemigo", numEnemigosEliminados);
-
+            if (AudioManager.instance.EliminarEnemigo != null)
+            {
+                AudioSource.PlayClipAtPoint(AudioManager.instance.EliminarEnemigo, transform.position);
+            }
             Destroy(gameObject);
-            AudioManager.instance.PlaySFX(EliminarEnemigo);
         }
     }
 }
