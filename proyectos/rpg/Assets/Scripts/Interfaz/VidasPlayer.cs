@@ -63,7 +63,7 @@ public class VidasPlayer : MonoBehaviour
 
     IEnumerator EjecutaMuerte()
     {
-        AudioManager.instance.PlaySFX(AudioManager.instance.GameOver);
+        AudioManager.instance.PlayUnscaledSFX(AudioManager.instance.GameOver);
         AudioManager.instance.StopMusic();
         yield return new WaitForSeconds(0.3f);
         gameOver.SetActive(true);
