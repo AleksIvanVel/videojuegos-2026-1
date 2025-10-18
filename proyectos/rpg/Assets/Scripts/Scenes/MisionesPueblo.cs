@@ -10,7 +10,7 @@ public class MisionesPueblo: MonoBehaviour
         {
             idMision = "pueblo_hierbas",
             misionNombre = "Recolectar hierbas finas",
-            descripcion = "Héctor necesita 3 hierbas finas del bosque cercano. Entrégaselas para recibir una moneda.",
+            descripcion = "Hector necesita 3 hierbas finas del bosque cercano. Entrï¿½gaselas para recibir una moneda.",
             tipoMision = TipoMision.Recoleccion,
             objetivos = new List<ObjetivoMision>
             {
@@ -18,7 +18,7 @@ public class MisionesPueblo: MonoBehaviour
             },
             recompensas = new List<RecompensaMision>
             {
-                new RecompensaMision { itemRecompensa = "moneda", cantidadRecompensa = 3 }
+                new RecompensaMision { itemRecompensa = "moneda", cantidadRecompensa = 1 }
             },
             EstaActiva = false,
             EstaCompletada = false

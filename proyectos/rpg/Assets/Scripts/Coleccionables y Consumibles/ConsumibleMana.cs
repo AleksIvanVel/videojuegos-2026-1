@@ -41,7 +41,7 @@ public class ConsumibleMana : MonoBehaviour
             if (PuedeMana)
             {
                 numMana++;
-                AudioManager.instance.PlaySFX(AudioManager.instance.Mana);
+                AudioManager.instance.PlayUnscaledSFX(AudioManager.instance.Mana);
             }
         }
         if (numMana == maxMana) // El objeto te puede reponer Mana n veces antes de desaparecer
