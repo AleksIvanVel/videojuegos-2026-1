@@ -12,6 +12,7 @@ public class MenuPrincipal : MonoBehaviour
     public Button btnJugar;
     public Button btnConfiguracion;
     public Button btnCreditos;
+    public Button btnPersonajes;
     
     [Header("Panel de Configuración")]
     public GameObject panelConfiguracion;
@@ -20,6 +21,10 @@ public class MenuPrincipal : MonoBehaviour
     public Slider sliderVolumenEfectos;
     public Text txtVolumenEfectos;
     public Button btnCerrarConfig;
+
+    [Header("Panel de Personajes")]
+    public GameObject panelPersonajes;
+    public Button btnCerrarPersonajes;
     
     [Header("Panel de Créditos")]
     public GameObject panelCreditos;
@@ -56,14 +61,17 @@ public class MenuPrincipal : MonoBehaviour
         btnCerrarConfig.onClick.AddListener(CerrarConfiguracion);
         btnCreditos.onClick.AddListener(AbrirCreditos);
         btnCerrarCreditos.onClick.AddListener(CerrarCreditos);
+        btnPersonajes.onClick.AddListener(AbrirPersonajes);
+        btnCerrarPersonajes.onClick.AddListener(CerrarPersonajes);
         
-        // Configurar slider
+        // Configurar sliders
         sliderVolumenMusica.onValueChanged.AddListener(CambiarVolumenMusica);
         sliderVolumenEfectos.onValueChanged.AddListener(CambiarVolumenEfectos);
         
         // Asegurar que los paneles estén cerrados al inicio
         panelConfiguracion.SetActive(false);
         panelCreditos.SetActive(false);
+        panelPersonajes.SetActive(false);
         
         // Configurar texto de créditos
         ConfigurarTextoCreditos();
@@ -99,7 +107,6 @@ public class MenuPrincipal : MonoBehaviour
 
     private void IniciarJuego()
     {
-        // Cambia "Juego" por el nombre de tu escena de juego
         SceneManager.LoadScene("Main");
     }
 
@@ -121,6 +128,16 @@ public class MenuPrincipal : MonoBehaviour
     private void CerrarCreditos()
     {
         panelCreditos.SetActive(false);
+    }
+
+    private void AbrirPersonajes()
+    {
+        panelPersonajes.SetActive(true);
+    }
+
+    private void CerrarPersonajes()
+    {
+        panelPersonajes.SetActive(false);
     }
 
     private void CambiarVolumenMusica(float valor)
