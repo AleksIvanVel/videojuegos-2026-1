@@ -28,9 +28,10 @@ public class MenuPrincipal : MonoBehaviour
     
     [Header("Panel de Créditos")]
     public GameObject panelCreditos;
-    public Text txtCreditos;
     public Button btnCerrarCreditos;
-    
+
+    [Header("Salir")]
+    public Button btnCerrarJuego;
     private int recordActual;
     private const string KEY_RECORD = "RecordJuego";
 
@@ -63,6 +64,8 @@ public class MenuPrincipal : MonoBehaviour
         btnCerrarCreditos.onClick.AddListener(CerrarCreditos);
         btnPersonajes.onClick.AddListener(AbrirPersonajes);
         btnCerrarPersonajes.onClick.AddListener(CerrarPersonajes);
+        btnCerrarJuego.onClick.AddListener(CerrarJuego);
+        
         
         // Configurar sliders
         sliderVolumenMusica.onValueChanged.AddListener(CambiarVolumenMusica);
@@ -73,8 +76,6 @@ public class MenuPrincipal : MonoBehaviour
         panelCreditos.SetActive(false);
         panelPersonajes.SetActive(false);
         
-        // Configurar texto de créditos
-        ConfigurarTextoCreditos();
     }
 
     private void ActualizarTextoRecord()
@@ -92,17 +93,6 @@ public class MenuPrincipal : MonoBehaviour
     {
         int porcentaje = Mathf.RoundToInt(sliderVolumenEfectos.value * 100);
         txtVolumenEfectos.text = porcentaje + "%";
-    }
-
-    private void ConfigurarTextoCreditos()
-    {
-        txtCreditos.text = "FLAPPY STEVE © 2025\n\n" +
-                          "Desarrollado por:\n\n" +
-                          "Diego Arroyo Palacios\n" +
-                          "Ricardo Madrigal Urencio\n" +
-                          "Aleks Iván Velázquez Arriaga\n\n" +
-                          "Inspirado en Flappy Bird\n\n" +
-                          "¡Gracias por jugar!\n\n";
     }
 
     private void IniciarJuego()
@@ -138,6 +128,12 @@ public class MenuPrincipal : MonoBehaviour
     private void CerrarPersonajes()
     {
         panelPersonajes.SetActive(false);
+    }
+
+    private void CerrarJuego()
+    {
+        Debug.Log("Saliendo del Juego");
+        Application.Quit();
     }
 
     private void CambiarVolumenMusica(float valor)

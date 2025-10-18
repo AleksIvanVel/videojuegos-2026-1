@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public bool yaVolo, estaVivo;
     public float valorOffset = 0;
 
-    private float velocidad = 3.0f, fuerzarebote = 4.0f;
+    private float velocidad = 4.0f, fuerzarebote = 4.0f;
     private Button btnvolar;
 
     private int score;
