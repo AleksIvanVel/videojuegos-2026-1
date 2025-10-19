@@ -92,7 +92,6 @@ public class AudioManager : MonoBehaviour
         float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
         SetSFXVolume(sfxVol);
         
-        // Aquí podrías actualizar los sliders de la UI si estuvieran visibles al inicio
     }
 
 
