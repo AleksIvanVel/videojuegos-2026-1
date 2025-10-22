@@ -8,10 +8,11 @@ public class Player : MonoBehaviour
     public static Player instancia;
     [SerializeField] private Rigidbody2D rb2d;
     [SerializeField] private Animator anim;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     public bool yaVolo, estaVivo;
     public float valorOffset = 0;
 
-    private float velocidad = 3.0f, fuerzarebote = 4.0f;
+    private float velocidad = 4.0f, fuerzarebote = 4.0f;
     private Button btnvolar;
 
     private int score;
@@ -37,6 +38,34 @@ public class Player : MonoBehaviour
         AsignaPosXCamara();
 
         ConfigurarAudioSources();
+    }
+
+    void Start()
+    {
+        // Cargar el personaje seleccionado
+        CargarPersonajeSeleccionado();
+    }
+
+    private void CargarPersonajeSeleccionado()
+    {
+        if (Personajes.instancia == null) return;
+
+        Personaje personajeSeleccionado = Personajes.instancia.ObtenerPersonajeSeleccionado();
+
+        if (personajeSeleccionado != null)
+        {
+            // Cambiar sprite
+            if (spriteRenderer != null && personajeSeleccionado.spriteIdle != null)
+            {
+                spriteRenderer.sprite = personajeSeleccionado.spriteIdle;
+            }
+
+            // Cambiar Animator Controller
+            if (anim != null && personajeSeleccionado.animatorController != null)
+            {
+                anim.runtimeAnimatorController = personajeSeleccionado.animatorController;
+            }
+        }
     }
 
     private void ConfigurarAudioSources()
@@ -77,7 +106,8 @@ public class Player : MonoBehaviour
             if (rb2d.velocity.y >= 0)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
-            } else
+            }
+            else
             {
                 float angulo = 0;
                 angulo = Mathf.Lerp(0, -90, -rb2d.velocity.y / 21);
@@ -121,7 +151,7 @@ public class Player : MonoBehaviour
         {
             score++;
             txtScore.text = score.ToString();
-            
+
             ActualizarVolumenEfectos();
             audioPunto.Play();
         }
@@ -135,11 +165,16 @@ public class Player : MonoBehaviour
             {
                 estaVivo = false;
                 anim.SetTrigger("muere");
-                
+
                 ActualizarVolumenEfectos();
                 audioMorir.Play();
 
                 MenuPrincipal.ActualizarRecord(score);
+
+                if (Personajes.instancia != null)
+                {
+                    Personajes.instancia.ActualizarDesbloqueos();
+                }
 
                 if (finJuegoManager != null)
                 {

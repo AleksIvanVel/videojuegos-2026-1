@@ -12,6 +12,7 @@ public class MenuPrincipal : MonoBehaviour
     public Button btnJugar;
     public Button btnConfiguracion;
     public Button btnCreditos;
+    public Button btnPersonajes;
     
     [Header("Panel de Configuración")]
     public GameObject panelConfiguracion;
@@ -20,12 +21,17 @@ public class MenuPrincipal : MonoBehaviour
     public Slider sliderVolumenEfectos;
     public Text txtVolumenEfectos;
     public Button btnCerrarConfig;
+
+    [Header("Panel de Personajes")]
+    public GameObject panelPersonajes;
+    public Button btnCerrarPersonajes;
     
     [Header("Panel de Créditos")]
     public GameObject panelCreditos;
-    public Text txtCreditos;
     public Button btnCerrarCreditos;
-    
+
+    [Header("Salir")]
+    public Button btnCerrarJuego;
     private int recordActual;
     private const string KEY_RECORD = "RecordJuego";
 
@@ -56,17 +62,20 @@ public class MenuPrincipal : MonoBehaviour
         btnCerrarConfig.onClick.AddListener(CerrarConfiguracion);
         btnCreditos.onClick.AddListener(AbrirCreditos);
         btnCerrarCreditos.onClick.AddListener(CerrarCreditos);
+        btnPersonajes.onClick.AddListener(AbrirPersonajes);
+        btnCerrarPersonajes.onClick.AddListener(CerrarPersonajes);
+        btnCerrarJuego.onClick.AddListener(CerrarJuego);
         
-        // Configurar slider
+        
+        // Configurar sliders
         sliderVolumenMusica.onValueChanged.AddListener(CambiarVolumenMusica);
         sliderVolumenEfectos.onValueChanged.AddListener(CambiarVolumenEfectos);
         
         // Asegurar que los paneles estén cerrados al inicio
         panelConfiguracion.SetActive(false);
         panelCreditos.SetActive(false);
+        panelPersonajes.SetActive(false);
         
-        // Configurar texto de créditos
-        ConfigurarTextoCreditos();
     }
 
     private void ActualizarTextoRecord()
@@ -86,20 +95,8 @@ public class MenuPrincipal : MonoBehaviour
         txtVolumenEfectos.text = porcentaje + "%";
     }
 
-    private void ConfigurarTextoCreditos()
-    {
-        txtCreditos.text = "FLAPPY STEVE © 2025\n\n" +
-                          "Desarrollado por:\n\n" +
-                          "Diego Arroyo Palacios\n" +
-                          "Ricardo Madrigal Urencio\n" +
-                          "Aleks Iván Velázquez Arriaga\n\n" +
-                          "Inspirado en Flappy Bird\n\n" +
-                          "¡Gracias por jugar!\n\n";
-    }
-
     private void IniciarJuego()
     {
-        // Cambia "Juego" por el nombre de tu escena de juego
         SceneManager.LoadScene("Main");
     }
 
@@ -121,6 +118,22 @@ public class MenuPrincipal : MonoBehaviour
     private void CerrarCreditos()
     {
         panelCreditos.SetActive(false);
+    }
+
+    private void AbrirPersonajes()
+    {
+        panelPersonajes.SetActive(true);
+    }
+
+    private void CerrarPersonajes()
+    {
+        panelPersonajes.SetActive(false);
+    }
+
+    private void CerrarJuego()
+    {
+        Debug.Log("Saliendo del Juego");
+        Application.Quit();
     }
 
     private void CambiarVolumenMusica(float valor)

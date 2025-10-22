@@ -35,6 +35,11 @@ public class Coleccionables : MonoBehaviour
         if (obj.tag == "coleccionable")
         {
             AplicaCambios(obj);
+            if (AudioManager.instance.RecolectarObjeto != null)
+            {
+                AudioSource.PlayClipAtPoint(AudioManager.instance.RecolectarObjeto, transform.position);
+            }
+            
         }
     }
 

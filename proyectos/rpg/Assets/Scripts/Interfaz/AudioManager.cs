@@ -4,7 +4,6 @@ using TMPro;
 
 public class AudioManager : MonoBehaviour
 {
-    // --- SINGLETON ---
     public static AudioManager instance;
 
     [Header("Audio Mixer")]
@@ -17,8 +16,31 @@ public class AudioManager : MonoBehaviour
     public TextMeshProUGUI PorcentajeMusica;
     public TextMeshProUGUI PorcentajeSFX;
 
+    [Header("Soundtrack")]
+    public AudioClip Menu;
+    public AudioClip Juego;
+    [Header("SFX")]
+    public AudioClip Atacar;
+    public AudioClip Caminar;
+    public AudioClip RecibirDaño;
+    public AudioClip Disparar;
+    public AudioClip IniciarDialogo;
+    public AudioClip SiguienteDialogo;
+    public AudioClip Pausa;
+    public AudioClip SalirPausa;
+    public AudioClip Inventario;
+    public AudioClip CerrarInventario;
+    public AudioClip RecolectarObjeto;
+    public AudioClip Cura;
+    public AudioClip Mana;
+    public AudioClip EliminarEnemigo;
+    public AudioClip GameOver;
+    public AudioClip WinGame;
+   
+
     void Awake()
     {
+        
         // Configuración del Singleton
         if (instance == null)
         {
@@ -70,7 +92,6 @@ public class AudioManager : MonoBehaviour
         float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
         SetSFXVolume(sfxVol);
         
-        // Aquí podrías actualizar los sliders de la UI si estuvieran visibles al inicio
     }
 
 
@@ -83,8 +104,27 @@ public class AudioManager : MonoBehaviour
         musicSource.Play();
     }
 
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
     public void PlaySFX(AudioClip sfxClip)
     {
         sfxSource.PlayOneShot(sfxClip); // PlayOneShot permite que varios efectos suenen a la vez
+    }
+
+    public void PlayUnscaledSFX(AudioClip clip)
+    {
+        if (clip == null) return; 
+        
+        GameObject tempGO = new GameObject("TempAudio");
+        tempGO.transform.position = Camera.main.transform.position;
+
+        AudioSource tempSource = tempGO.AddComponent<AudioSource>();
+        tempSource.clip = clip;
+        tempSource.outputAudioMixerGroup = sfxSource.outputAudioMixerGroup; 
+        tempSource.Play();
+        Destroy(tempGO, clip.length);
     }
 }

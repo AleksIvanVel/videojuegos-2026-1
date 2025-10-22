@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class WinGame : MonoBehaviour
 {
-
     public string misionId;
     public GameObject winPanel;
-    // Start is called before the first frame update
+    private bool isGameWon = false; // Bandera para evitar llamadas múltiples
+
     void Start()
     {
         winPanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Si el juego ya terminó, no hagas nada.
+        if (isGameWon) return;
+
         var mision = MisionManager.instance.ObtenerMisionPorId(misionId);
 
-        if (mision != null)
+        if (mision != null && mision.EstaCompletada)
         {
-            if (mision.EstaCompletada)
-            {
-                MostrarWinPanel();
-            }
+            isGameWon = true;
+            
+            StartCoroutine(MostrarWinPanel());
         }
     }
 
-    void MostrarWinPanel()
+    IEnumerator MostrarWinPanel()
     {
+        AudioManager.instance.PlayUnscaledSFX(AudioManager.instance.WinGame);
+        AudioManager.instance.StopMusic();
+
+        // Usamos WaitForSecondsRealtime porque Time.timeScale se pondrá en 0
+        yield return new WaitForSecondsRealtime(0.3f);
+        
         winPanel.SetActive(true);
         Time.timeScale = 0f; // Pausa el juego
     }
