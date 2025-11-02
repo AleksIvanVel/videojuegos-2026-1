@@ -8,6 +8,9 @@ TagManager:
   - comida
   - video
   - audio
+  - gasolinera
+  - sabrina
+  - wonderwoman
   layers:
   - Default
   - TransparentFX
